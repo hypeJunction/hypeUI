@@ -1,0 +1,837 @@
+@import "mixins"
+@import "variables"
+
+@import "../vendor/bower-asset/bulma/bulma.sass"
+
+// Layout
+.elgg-page-topbar
+  z-index: 11
+  position: relative
+
+.elgg-page-navbar
+  z-index: 10
+  position: relative
+
+.elgg-layout-navigation
+  margin-top: -1em
+  margin-bottom: 1em
+
+.elgg-layout-content
+  padding: 2em 0
+
+.elgg-layout-widgets
+  @extend .columns
+  margin-top: 1.5em
+
+.elgg-layout-owner-block
+  .elgg-image-block
+    align-items: center
+
+.elgg-layout-cover
+  display: block
+  width: 100%
+  height: 100%
+  background-size: cover
+  content: ""
+  position: absolute
+  background-position: 50%
+  opacity: 0.5
+
+.elgg-layout-header
+  position: relative
+  +mobile
+    .elgg-image-block
+      flex-direction: column
+      justify-content: center
+      .media-content
+        text-align: center
+
+.elgg-col-1of1
+  @extend .column
+  @extend .is-full
+
+.elgg-col-1of2
+  @extend .column
+  @extend .is-half
+
+.elgg-col-1of3
+  @extend .column
+  @extend .is-one-third
+
+.elgg-col-2of3
+  @extend .column
+  @extend .is-two-thirds
+
+.elgg-col-1of4
+  @extend .column
+  @extend .is-one-quarter
+
+.elgg-col-2of4
+  @extend .column
+  @extend .is-half
+
+.elgg-col-3of4
+  @extend .column
+  @extend .is-three-quarters
+
+// Buttons
+.elgg-button
+  @extend .button
+  & + .elgg-button
+    margin-left: 0.5em
+
+.elgg-button-action
+  @extend .is-primary
+
+.elgg-button-submit
+  @extend .is-primary
+
+.elgg-button-delete
+  @extend .is-danger
+
+.elgg-button-special
+  @extend .is-info
+
+// States
+.elgg-state-disabled
+  @extend [disabled]
+
+.elgg-state-error
+  @extend .is-danger
+
+.elgg-state-success
+  @extend .is-success
+
+.elgg-state-selected
+  @extend .is-selected
+
+.elgg-tabs .elgg-state-selected
+  @extend .is-active
+
+.elgg-state-notice
+  @extend .is-info
+
+// Typography
+.elgg-subtext
+  font-size: 0.75em
+  color: $black-bis
+
+.elgg-output
+  @extend .content
+
+.elgg-topbar-logo a
+  color: #fff !important
+
+.elgg-text-help
+  @extend .help
+
+.elgg-listing-summary-title
+  line-height: 1em
+  & + .elgg-listing-summary-tagline
+    line-height: 1em
+    margin-bottom: 0.25em
+    margin-top: 0
+  .elgg-listing-summary-badges
+    margin-left: 0.5em
+  &:not(:last-child)
+    margin-bottom: 0.25em
+
+.elgg-listing-summary-subtitle
+  .icon
+    margin-right: 0.5em
+
+.elgg-listing-summary-content
+  margin-top: 1em
+
+.elgg-listing-summary-header
+  align-items: center
+
+.elgg-listing-summary-metadata
+  margin-top: 1em
+
+.elgg-listing-summary-menu
+  float: right
+  margin: 0.5em 0 0.5em 0.5em
+
+.elgg-listing-full .elgg-listing-summary-body
+  margin: 2em auto
+
+.elgg-listing-imprint
+  & > span + span
+    margin-left: 1em
+
+.elgg-listing-card .level
+  flex-wrap: wrap
+  justify-content: flex-start
+
+.elgg-listing-card .level-item
+  flex-shrink: initial
+  justify-content: flex-start
+  align-items: flex-start
+
+.elgg-listing-card .level-left,
+.elgg-listing-card .level-right
+  flex-shrink: initial
+  align-items: flex-start
+
+.elgg-subtext
+  @extend .is-small
+
+// Components
+.elgg-table, .elgg-table-alt, .theme-sandbox-table
+  @extend .table
+
+.elgg-image
+  img
+    vertical-align: middle
+
+.elgg-image-block
+  &.is-vcentered
+    align-items: center
+
+.elgg-message
+  @extend .notification
+
+.elgg-system-messages
+  position: absolute
+  width: 300px
+  top: 0
+  right: 0
+  margin: 4em
+  z-index: 100
+
+.elgg-list > .elgg-item
+  @extend .box
+  &:not(:last-child)
+    margin-bottom: 0.5rem
+
+.elgg-gallery
+  @extend .columns
+  flex-wrap: wrap
+  margin: 0
+
+.elgg-cards
+  @extend .columns
+  & > li
+    @extend .column
+    @extend .is-one-third
+    .card
+      height: 100%
+
+.pagination
+  margin-top: 1em
+
+.elgg-listing-summary-metadata .elgg-tags
+  text-align: center
+
+.elgg-tag
+  @extend .tag
+  margin-right: 4px
+
+.profile-details
+  padding: 0
+
+.elgg-output-field
+  padding: 1rem
+  &:not(:last-child)
+    border-bottom: 1px solid $white-ter
+
+.elgg-output-field-label
+  color: $text-light
+  font-size: .7em
+  letter-spacing: .1em
+  text-transform: uppercase
+  margin-bottom: 0.5em
+
+.elgg-output-field-value .elgg-tags
+  text-align: left
+
+.elgg-river-selector
+  margin-bottom: 1em
+
+.elgg-river-selector .elgg-field
+  display: inline-block
+
+.elgg-river-message,
+.elgg-river-attachments,
+.elgg-river-responses
+  &:not(:empty)
+    margin-top: 1em
+
+.elgg-river-timestamp
+  font-size: 0.75em
+  margin-left: 0.5em
+
+.elgg-river-timestamp .icon
+  margin-right: 0.25em
+
+/* Comment highlighting that automatically fades away */
+.elgg-comments .elgg-state-highlight,
+.elgg-river-comments .elgg-state-highlight
+  animation: comment-highlight 5s
+
+/* Chrome, Safari, Opera */
+@keyframes comment-highlight
+  0%
+    background: $success
+  100%
+    background: $white
+
+.elgg-comments .elgg-form
+  margin-top: 1em
+
+// Navigation
+.elgg-menu
+  display: flex
+  flex-direction: column
+  list-style: none
+  img
+    vertical-align: middle
+
+.has-hidden-label
+  +tablet
+    .elgg-anchor-label
+      display: none
+
+.elgg-breadcrumbs
+  flex-direction: row
+
+.elgg-menu-hz
+  flex-direction: row
+  & > li + li
+    margin-left: 0.5em
+
+.elgg-menu-site
+  justify-content: space-around
+
+.elgg-page-topbar .nav-left,
+.elgg-page-topbar .nav-right
+  overflow: visible
+
+.elgg-page-navbar
+  display: none
+  +tablet
+    display: block
+
+.elgg-menu-topbar [type="text"]
+  background: rgba(255, 255, 255, 0.1)
+  border: rgba(255, 255, 255, 0.2) !important
+  color: $white
+  & ~ .icon
+    color: rgba($primary-invert, 0.7) !important
+  &:focus, &:active
+    ~ .icon
+      color: $white !important
+  +placeholder
+    color: rgba($primary-invert, 0.7)
+
+.elgg-menu-topbar,
+.elgg-menu-site
+  .field
+    margin: 0
+  .elgg-menu-item-profile
+    .elgg-avatar
+      display: inline-block
+      & + *
+        margin-left: 0.5em
+  a
+    font-weight: 300
+    position: relative
+  +mobile
+    flex-direction: column
+    height: auto
+    align-items: center
+    & > li
+      justify-content: center
+      display: block
+      width: 100%
+      padding: 0
+      text-align: left
+      a
+        padding: 8px 32px 8px 16px
+        display: inline-block
+        border-top: 1px solid rgba($white, 0.2)
+        width: 100%
+    .field
+      margin: 8px
+    .elgg-menu-parent
+      display: none
+    ul
+      display: block
+  li
+    position: relative
+    margin: 0 !important
+  li ul
+    +tablet
+      display: none
+      position: absolute
+      top: $nav-height
+      background: $primary
+      width: 200px
+      left: 50%
+      transform: translate(-50%, 0)
+      .is-dark &
+        background: $dark
+  li:hover ul
+    +tablet
+      display: block
+  li ul li a
+    padding: 8px 16px
+    display: inline-block
+    border-top: 1px solid rgba($white, 0.2)
+    width: 100%
+    text-align: left
+  li ul li a .icon
+    width: 24px
+    text-align: center
+    margin-right: 8px
+
+.elgg-menu-longtext
+  float: right
+  margin-top: -1.5em
+  font-size: 0.75em
+
+.elgg-menu-river,
+.elgg-menu-annotation
+  float: right
+
+.elgg-menu-entity,
+.elgg-menu-annotation,
+.elgg-menu-river,
+.elgg-menu-entity-social
+  font-size: .75rem
+  a, span
+    color: $grey-darker
+  & > li + li
+    margin-left: 1em
+  & + &
+    margin-left: 1em
+
+.elgg-menu-icon-after
+  margin-left: 0.25em
+
+.elgg-menu-extras
+  & > li
+    margin: 4px
+
+.elgg-menu-user-hover-admin,
+.elgg-menu-user-hover-danger,
+.elgg-menu-page-admin,
+.elgg-menu-page-danger
+  a
+    color: $danger
+
+.elgg-menu-user-hover-actions,
+.elgg-menu-page-actions
+  a
+    color: $primary
+    font-weight: 600
+
+.elgg-menu-page .icon
+  width: 1.5em
+  text-align: center
+
+.elgg-menu-page .elgg-child-menu
+  display: none
+
+.elgg-menu-page .elgg-menu-parent.elgg-menu-opened + .elgg-child-menu
+  display: flex
+
+.elgg-menu-page a
+  position: relative
+
+.elgg-menu-page .elgg-menu-parent:after
+  border: 1px solid $primary
+  border-right: 0
+  border-top: 0
+  content: " "
+  display: block
+  height: .5em
+  pointer-events: none
+  position: absolute
+  transform: rotate(-135deg)
+  width: .5em
+  margin-top: -.25em
+  right: 1.125em
+  top: 50%
+  z-index: 4
+  float: right
+
+.elgg-menu-page .elgg-menu-parent.elgg-menu-opened:after
+  transform: rotate(-45deg)
+
+.elgg-object-menu-toggle .elgg-icon
+  font-size: 0.75em !important
+  color: $grey-darker
+
+.elgg-badge
+  display: inline-block
+  margin-left: 5px
+  color: $dark-invert
+  background-color: $dark
+  padding: 0.5em 0.75em
+  line-height: 1
+  text-align: center
+  white-space: nowrap
+  vertical-align: middle
+  border-radius: 50%
+  font-size: 0.5em
+  &:empty
+    display: none
+  .elgg-menu-topbar &
+    background-color: $warning
+    color: $warning-invert
+    font-weight: 700
+    +mobile
+      margin: 2px
+      font-size: 0.75em
+      float: right
+    +tablet
+      font-size: 0.5em
+      position: absolute
+      top: -0.5em
+      right: -1.5em
+
+// Forms
+fieldset
+  border: none
+  padding: 0
+  margin: 0
+
+.elgg-required-indicator
+  color: $red
+  margin-left: 4px
+  font-weight: normal
+  font-size: 1em
+
+.elgg-input-single-checkbox .elgg-field-label
+  display: inline-block
+  font-weight: normal
+
+.elgg-field
+  @extend .field
+
+.elgg-form > fieldset > div:not(:last-child)
+  @extend .field
+
+.elgg-fieldset-horizontal > .elgg-field
+  display: inline-block
+
+.elgg-fieldset-horizontal > .elgg-field + .elgg-field
+  margin-left: 8px
+
+.elgg-field-label
+  @extend .label
+
+.elgg-input-text,
+.elgg-input-date,
+.elgg-input-email,
+.elgg-input-password,
+.elgg-input-autocomplete,
+.elgg-input-file,
+.elgg-input-url,
+.elgg-input-tags,
+.elgg-input-user-picker,
+.elgg-input-number,
+.elgg-input-location
+  @extend .input
+
+.elgg-input-plaintext,
+.elgg-input-longtext
+  @extend .textarea
+
+.elgg-input-single-checkbox
+  @extend .checkbox
+
+// Icons
+.elgg-avatar-medium,
+.elgg-avatar-small,
+.elgg-avatar-tiny
+  border: 2px solid $white-ter
+  border-radius: 50%
+  img
+    border-radius: 50%
+    vertical-align: middle
+
+.elgg-avatar-tiny
+  max-width: 25px
+
+.elgg-avatar-small
+  max-width: 40px
+
+.elgg-avatar-medium
+  max-width: 100px
+
+.icon + .elgg-anchor-label
+  margin-left: 0.25em
+
+.elgg-icon-hover
+  color: $info
+
+.elgg-ajax-loader
+  background: white url(ajax_loader_bw.gif) no-repeat center center
+  min-height: 31px
+  min-width: 31px
+
+// Helpers
+.clearfix
+  @extend .is-clearfix
+
+.hidden
+  display: none
+
+// Modules
+.elgg-module
+  margin-bottom: 1rem
+  & > .elgg-head
+    padding-bottom: 1em
+    text-transform: uppercase
+    color: $text-light
+    font-size: .8em
+    letter-spacing: .1em
+
+.elgg-module-popup
+  @extend .box
+  position: absolute
+  z-index: 1001
+  max-width: 600px
+
+.elgg-menu-hover,
+.elgg-object-menu-popup
+  @extend .box
+  padding: 0
+  position: absolute
+  z-index: 1001
+  width: 12rem
+  overflow: hidden
+  &.is-loading
+    padding: 1em
+  ul
+    margin: 0 !important
+    font-size: 0.85em
+    &:not(:last-child)
+      border-bottom: 1px solid $grey-lighter
+    &:first-child > li:first-child
+      border-radius: $radius-small $radius-small 0 0
+    &:last-child > li:last-child
+      border-radius: 0 0 $radius-small $radius-small
+    li:not(:last-child)
+      border-bottom: 1px solid $grey-lighter
+    li
+      margin: 0
+  ul > li > a,
+  ul > li > span
+    padding: 0.5em 1em
+    display: block
+    &:hover
+      background-color: $white-ter
+    .icon
+      width: 2em
+      text-align: center
+      margin-right: 0.5em
+  .elgg-no-results
+    font-size: 0.75em
+    padding: 0.5em 1em
+
+.elgg-module-dropdown
+  @extend .box
+  z-index: 100
+  position: absolute
+  right: 0px
+  top: 100%
+
+.elgg-module-featured
+  border: 1px solid $primary
+  border-radius: $radius-small
+
+.elgg-module-featured > .elgg-head
+  padding: 0.5em 1em
+  background-color: $primary
+  color: $primary-invert
+
+.elgg-module-featured > .elgg-body
+  padding: 1em
+
+.elgg-module-menu
+  float: right
+
+.elgg-module-widget
+  @extend .box
+
+.elgg-widget-edit
+  display: none
+  padding: 1em 0
+  margin-bottom: 1em
+  border-bottom: 1px solid $white-ter
+
+.elgg-module-widget.elgg-state-draggable .elgg-widget-handle
+  cursor: move
+
+.elgg-widget-placeholder
+  border: 2px dashed $primary
+  margin-bottom: 15px
+  border-radius: $radius-large
+
+.elgg-widget-more,
+.elgg-river-more
+  margin-top: 1em
+  display: block
+
+.elgg-widgets
+  min-height: 2em
+
+.elgg-widget-add-control
+  text-align: right
+  display: block
+  padding: 1em 0
+
+.elgg-widgets-add-panel-list
+  flex-wrap: wrap
+
+.elgg-widgets-add-panel-list > li
+  padding: 0.5em
+
+.elgg-widgets-add-panel-list > li span
+  border: 1px solid $grey-light
+  display: block
+  padding: 8px
+  border-radius: 3px
+  background: $white-ter
+  cursor: pointer
+
+.elgg-widgets-add-panel-list > li.elgg-state-available:hover span
+  color: $primary
+  border-color: $primary
+  backaground: $primary-invert
+
+.elgg-widgets-add-panel li.elgg-state-unavailable span
+  color: $grey-lighter
+  cursor: not-allowed
+
+.elgg-module-group
+  margin-bottom: 40px
+
+.elgg-module-hero
+  margin: 0
+  padding: 2em
+  border-radius: $radius-small
+
+#login-box
+  width: 30em
+  padding: 2em
+
+// Groups
+.groups-tools
+  margin-top: 1.5em
+
+.groups-widget-viewall
+  float: right
+  font-size: 85%
+
+// Datepicker
+.ui-datepicker
+  @extend .box
+  display: none
+  margin: 0
+  padding: 0
+  border-radius: $radius-small
+  overflow: hidden
+  min-width: 300px
+
+.ui-datepicker-inline
+  -moz-box-shadow: none
+  -webkit-box-shadow: none
+  box-shadow: none
+
+.ui-datepicker-header
+  position: relative
+  background: transparent
+  padding: 0.25em
+  border: 0
+
+.ui-datepicker-header a
+  padding: 0 0.5em
+
+.ui-datepicker-prev, .ui-datepicker-next
+  position: absolute
+  top: 0.5em
+  cursor: pointer
+
+.ui-datepicker-prev.ui-state-hover, .ui-datepicker-next.ui-state-hover
+  border: none
+  background: transparent
+  font-weight: bold
+
+.ui-datepicker-prev
+  left: 6px
+  &.ui-state-disabled
+    display: none
+
+.ui-datepicker-next
+  right: 6px
+  &.ui-state-disabled
+    display: none
+
+.ui-datepicker-title
+  line-height: 2em
+  margin: 0 30px
+  text-align: center
+  font-weight: normal
+
+.ui-datepicker-title select,
+.ui-datepicker-title .chosen-container
+  max-width: 100px
+  display: inline-block
+  margin: 2px
+  border: 1px solid $grey-light
+  padding: 4px
+  border-radius: 3px
+
+.ui-datepicker-calendar
+  margin: 4px
+  width: 90%
+  margin: 4% auto
+  font-size: 14px
+
+.ui-datepicker th
+  color: $black
+  border: none
+  font-weight: bold
+  padding: 8px 6px
+  text-align: center
+
+.ui-datepicker td
+  padding: 1px
+  min-width: 40px
+
+.ui-datepicker td span, .ui-datepicker td a
+  display: block
+  padding: 3px
+  text-align: center
+  text-decoration: none
+
+.ui-datepicker-calendar .ui-state-default
+  border: 1px solid $grey-light
+  color: $text
+  background: #ffffff
+  border-radius: $radius-small
+
+.ui-datepicker-calendar .ui-state-hover,
+.ui-datepicker-calendar .ui-state-active,
+.ui-datepicker-calendar .ui-state-active.ui-state-hover
+  border: 1px solid $primary
+  -moz-box-shadow: 0 0 0 0px #ccc inset
+  -webkit-box-shadow: 0 0 0 0px #ccc inset
+  box-shadow: 0 0 0 0px #ccc inset
+  font-weight: normal
+  color: $primary
+  background: $white-ter
+
+.ui-datepicker-calendar .ui-state-disabled .ui-state-default
+  border: none
+  color: $grey-light
+  cursor: not-allowed
+  background: none
+
+.messages-buttonbank
+  margin-top: 1em
