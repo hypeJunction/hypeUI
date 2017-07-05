@@ -1,5 +1,10 @@
 <?php
 
+$topbar = elgg_extract('topbar', $vars);
+if ($topbar === false) {
+    return;
+}
+
 $walled = elgg_get_config('walled_garden') && !elgg_is_logged_in();
 
 $class = elgg_in_context('admin') ? 'is-dark' : 'is-primary';
