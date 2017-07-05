@@ -2,6 +2,11 @@
 /**
  * Page footer
  */
+
+$footer = elgg_extract('footer', $vars);
+if ($footer === false) {
+    return;
+}
 ?>
 <footer class="elgg-page-footer footer">
     <div class="elgg-inner container">
