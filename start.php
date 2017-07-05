@@ -41,6 +41,7 @@ elgg_register_event_handler('init', 'system', function() {
 	// Lightbox
 	elgg_unregister_css('lightbox');
 	elgg_extend_view('elgg.css', 'lightbox/elgg-colorbox-theme/colorbox.css');
+	elgg_extend_view('admin.css', 'lightbox/elgg-colorbox-theme/colorbox.css');
 	elgg_register_plugin_hook_handler('elgg.data', 'site', [Lightbox::class, 'configure']);
 
 	if (elgg_is_active_plugin('likes')) {
