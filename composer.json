@@ -8,7 +8,6 @@
 		"plugin",
 		"ui",
 		"theme"
-		
 	],
 	"license": "GPL-2.0",
 	"authors": [
@@ -22,12 +21,12 @@
 		"composer/installers": "~1.0",
 		"bower-asset/bulma": "^0.4.2"
 	},
-	"required-dev": {
-		"elgg/elgg": "~2.3"
+	"extra": {
+		"installer-name": "hypeUI"
 	},
 	"autoload": {
 		"psr-0": {
-			"hypeJunction": "classes/hypeJunction/"
+			"": "classes/"
 		}
 	}
 }
