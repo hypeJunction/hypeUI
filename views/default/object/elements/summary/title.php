@@ -7,6 +7,7 @@
 
 $entity = elgg_extract('entity', $vars);
 $title = elgg_extract('title', $vars);
+
 if (!$title) {
 	return;
 }
