@@ -32,16 +32,14 @@ foreach ($vars as $key => $value) {
 
 if ($entity instanceof ElggObject) {
 	$owner = $entity->getOwnerEntity();
-	if (!$owner) {
+	if ($entity->owner_guid && !$owner) {
 		elgg_log("User {$entity->owner_guid} could not be loaded, and is needed to display entity {$entity->guid}", 'WARNING');
-
 		return;
 	}
 
 	$container = $entity->getContainerEntity();
-	if (!$container) {
+	if ($entity->container_guid && !$container) {
 		elgg_log("Entity {$entity->container_guid} could not be loaded, and is needed to display entity {$entity->guid}", 'WARNING');
-
 		return;
 	}
 }
@@ -99,8 +97,9 @@ if (empty($icon) && $icon !== false && $entity instanceof ElggEntity) {
 	if ($entity instanceof ElggUser || $entity instanceof ElggGroup) {
 		$vars['icon'] = elgg_view_entity_icon($entity, 'small');
 	} else {
-		$owner = $entity->getOwnerEntity();
-		$vars['icon'] = elgg_view_entity_icon($owner, 'small');
+		if ($owner) {
+			$vars['icon'] = elgg_view_entity_icon($owner, 'small');
+		}
 		if (empty($media) && $media !== false) {
 			if ($entity->hasIcon('small')) {
 				$size = $entity instanceof ElggFile ? 'small' : 'medium';

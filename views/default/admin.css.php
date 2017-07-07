@@ -49,9 +49,10 @@ echo elgg_view('elements/helpers.css', $vars);
 **************************************** */
 .elgg-list > li.elgg-item-object-plugin {
     margin: 0;
-    padding: 0;
-    border: 0;
-    box-shadow: none;
+    padding: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important
+    background: none !important;
 }
 
 .elgg-plugin {

@@ -615,26 +615,26 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   user-select: none;
 }
 
-.box, .elgg-list > .elgg-item, .elgg-module-popup, .elgg-menu-hover,
-.elgg-object-menu-popup, .elgg-module-dropdown, .elgg-module-widget, .ui-datepicker {
+.box, .elgg-list:not(.is-borderless) > .elgg-item, .elgg-module-popup, .elgg-menu-hover,
+.elgg-object-menu-popup, .elgg-module-dropdown, .elgg-module-widget, .ui-datepicker, .thewire-form {
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 2px 3px rgba(33, 33, 33, 0.1), 0 0 0 1px rgba(33, 33, 33, 0.1);
   display: block;
   padding: 1.25rem;
 }
-.box:not(:last-child), .elgg-list > .elgg-item:not(:last-child), .elgg-module-popup:not(:last-child), .elgg-menu-hover:not(:last-child),
-.elgg-object-menu-popup:not(:last-child), .elgg-module-dropdown:not(:last-child), .elgg-module-widget:not(:last-child), .ui-datepicker:not(:last-child) {
+.box:not(:last-child), .elgg-list:not(.is-borderless) > .elgg-item:not(:last-child), .elgg-module-popup:not(:last-child), .elgg-menu-hover:not(:last-child),
+.elgg-object-menu-popup:not(:last-child), .elgg-module-dropdown:not(:last-child), .elgg-module-widget:not(:last-child), .ui-datepicker:not(:last-child), .thewire-form:not(:last-child) {
   margin-bottom: 1.5rem;
 }
 
-a.box:hover, .elgg-list > a.elgg-item:hover, a.elgg-module-popup:hover, a.elgg-menu-hover:hover,
-a.elgg-object-menu-popup:hover, a.elgg-module-dropdown:hover, a.elgg-module-widget:hover, a.ui-datepicker:hover, a.box:focus, .elgg-list > a.elgg-item:focus, a.elgg-module-popup:focus, a.elgg-menu-hover:focus,
-a.elgg-object-menu-popup:focus, a.elgg-module-dropdown:focus, a.elgg-module-widget:focus, a.ui-datepicker:focus {
+a.box:hover, .elgg-list:not(.is-borderless) > a.elgg-item:hover, a.elgg-module-popup:hover, a.elgg-menu-hover:hover,
+a.elgg-object-menu-popup:hover, a.elgg-module-dropdown:hover, a.elgg-module-widget:hover, a.ui-datepicker:hover, a.thewire-form:hover, a.box:focus, .elgg-list:not(.is-borderless) > a.elgg-item:focus, a.elgg-module-popup:focus, a.elgg-menu-hover:focus,
+a.elgg-object-menu-popup:focus, a.elgg-module-dropdown:focus, a.elgg-module-widget:focus, a.ui-datepicker:focus, a.thewire-form:focus {
   box-shadow: 0 2px 3px rgba(33, 33, 33, 0.1), 0 0 0 1px #0398e2;
 }
-a.box:active, .elgg-list > a.elgg-item:active, a.elgg-module-popup:active, a.elgg-menu-hover:active,
-a.elgg-object-menu-popup:active, a.elgg-module-dropdown:active, a.elgg-module-widget:active, a.ui-datepicker:active {
+a.box:active, .elgg-list:not(.is-borderless) > a.elgg-item:active, a.elgg-module-popup:active, a.elgg-menu-hover:active,
+a.elgg-object-menu-popup:active, a.elgg-module-dropdown:active, a.elgg-module-widget:active, a.ui-datepicker:active, a.thewire-form:active {
   box-shadow: inset 0 1px 2px rgba(33, 33, 33, 0.2), 0 0 0 1px #0398e2;
 }
 
@@ -8007,6 +8007,10 @@ label.panel-block:hover {
   align-items: flex-start;
 }
 
+.elgg-listing-primer .media-left {
+  max-width: 40px;
+}
+
 .title .elgg-anchor-label, .subtitle .elgg-anchor-label {
   font-weight: inherit;
 }
@@ -8028,8 +8032,17 @@ label.panel-block:hover {
   z-index: 100;
 }
 
-.elgg-list > .elgg-item:not(:last-child) {
+.elgg-list.is-borderless > .elgg-item {
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0.5em;
+}
+.elgg-list:not(.is-borderless) > .elgg-item:not(:last-child) {
   margin-bottom: 0.5rem;
+}
+.elgg-list.is-striped > .elgg-item:nth-child(even) {
+  background-color: whitesmoke;
 }
 
 .elgg-gallery {
@@ -8041,8 +8054,74 @@ label.panel-block:hover {
   height: 100%;
 }
 
-.pagination {
+.elgg-pagination {
   margin-top: 1em;
+  font-size: 1rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.elgg-pagination > li > a, .elgg-pagination > li > span {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 2.25em;
+  justify-content: flex-start;
+  line-height: 1.5;
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: calc(0.625em - 1px);
+  padding-right: calc(0.625em - 1px);
+  padding-top: calc(0.375em - 1px);
+  position: relative;
+  vertical-align: top;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  justify-content: center;
+  margin: 0.25rem;
+  text-align: center;
+  border-color: #dbdbdb;
+  min-width: 2.25em;
+}
+.elgg-pagination > li > a:focus, .elgg-pagination > li > a.is-focused, .elgg-pagination > li > a:active, .elgg-pagination > li > a.is-active, .elgg-tabs .elgg-pagination > li > a.elgg-state-selected, .elgg-pagination > li > span:focus, .elgg-pagination > li > span.is-focused, .elgg-pagination > li > span:active, .elgg-pagination > li > span.is-active, .elgg-tabs .elgg-pagination > li > span.elgg-state-selected {
+  outline: none;
+}
+.elgg-pagination > li > a[disabled], .elgg-pagination > li > a.elgg-state-disabled, .elgg-pagination > li > span[disabled], .elgg-pagination > li > span.elgg-state-disabled {
+  cursor: not-allowed;
+}
+.elgg-pagination > li > a:hover, .elgg-pagination > li > span:hover {
+  border-color: #b5b5b5;
+  color: #363636;
+}
+.elgg-pagination > li > a:focus, .elgg-pagination > li > span:focus {
+  border-color: #0398e2;
+}
+.elgg-pagination > li > a:active, .elgg-pagination > li > span:active {
+  box-shadow: inset 0 1px 2px rgba(33, 33, 33, 0.2);
+}
+.elgg-pagination > li.elgg-state-disabled > a, .elgg-pagination > li.elgg-state-disabled > span {
+  background-color: #dbdbdb;
+  border-color: #dbdbdb;
+  box-shadow: none;
+  color: #7a7a7a;
+  opacity: 0.5;
+}
+.elgg-pagination > li.elgg-state-selected > a, .elgg-pagination > li.elgg-state-selected > span {
+  background-color: #0398e2;
+  border-color: #0398e2;
+  color: #fff;
 }
 
 .elgg-listing-summary-metadata .elgg-tags {
@@ -8122,6 +8201,10 @@ label.panel-block:hover {
   display: flex;
   flex-direction: column;
   list-style: none;
+}
+.content .elgg-menu, .elgg-output .elgg-menu {
+  list-style: none;
+  margin: 0;
 }
 .elgg-menu img {
   vertical-align: middle;
@@ -8241,6 +8324,7 @@ label.panel-block:hover {
     width: 200px;
     left: 50%;
     transform: translate(-50%, 0);
+    box-shadow: 2px 2px 3px rgba(255, 255, 255, 0.3);
   }
   .is-dark .elgg-menu-topbar li ul {
     background: #363636;
@@ -8803,4 +8887,18 @@ fieldset {
 
 .messages-buttonbank {
   margin-top: 1em;
+}
+
+.interactions-comments-list > li {
+  box-shadow: none !important;
+  border-bottom: 1px solid #dcdcdc !important;
+}
+
+.interactions-comments-list > li .elgg-listing-full {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.interactions-component .elgg-form {
+  padding: 1.5em 1em 1em 1em;
 }

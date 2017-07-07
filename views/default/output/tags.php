@@ -59,7 +59,7 @@ if (empty($list_items)) {
 	return;
 }
 
-echo elgg_format_element('div', [
+echo elgg_format_element('span', [
         'class' => $list_class,
 ], $list_items);
 

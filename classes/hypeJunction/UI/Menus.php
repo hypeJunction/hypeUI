@@ -20,7 +20,7 @@ class Menus {
 	 */
 	public static function setupTopbarMenu($hook, $type, $return, $params) {
 
-		$remove = ['friends'];
+		$remove = ['friends', 'dashboard'];
 
 		$walled = elgg_get_config('walled_garden') && !elgg_is_logged_in();
 
@@ -51,8 +51,6 @@ class Menus {
 		}
 
 		if (!elgg_is_logged_in()) {
-
-			$remove[] = 'dashboard';
 
 			if (!$walled || !elgg_in_context('main')) {
 				$return[] = ElggMenuItem::factory([
@@ -150,6 +148,14 @@ class Menus {
 			}
 		}
 
+		if (elgg_is_logged_in() && elgg_is_active_plugin('dashboard')) {
+			$return[] = ElggMenuItem::factory([
+				'name' => 'dashboard',
+				'text' => elgg_echo('dashboard'),
+				'href' => 'dashboard',
+			]);
+		}
+
 		return $return;
 	}
 
@@ -183,7 +189,7 @@ class Menus {
 		}
 
 		if (!$has_selected) {
-			$is_selected = function($item) {
+			$is_selected = function ($item) {
 				$current_url = current_page_url();
 				if (strpos($item->getHref(), elgg_get_site_url()) === 0) {
 					if ($item->getName() == elgg_get_context()) {
@@ -193,6 +199,7 @@ class Menus {
 						return true;
 					}
 				}
+
 				return false;
 			};
 			foreach ($registered as &$item) {
@@ -267,7 +274,7 @@ class Menus {
 				$return = groups_prepare_profile_buttons(null, null, $return, $params);
 			}
 
-			if (elgg_is_active_plugin('notifications')) {
+			if (elgg_is_active_plugin('notifications') && $entity->isMember($user)) {
 				$subscribed = false;
 
 				$methods = elgg_get_notification_methods();
@@ -301,6 +308,18 @@ class Menus {
 							'confirm' => elgg_echo('deleteconfirm'),
 						]);
 					}
+			}
+		}
+
+		if ($entity instanceof \ElggFile) {
+			if (elgg_trigger_plugin_hook('permissions_check:download', 'file', $params, true)) {
+				$return[] = ElggMenuItem::factory([
+					'name' => 'download',
+					'text' => elgg_echo('download'),
+					'href' => elgg_get_download_url($entity),
+					'section' => 'actions',
+					'icon' => 'download',
+				]);
 			}
 		}
 
@@ -359,6 +378,24 @@ class Menus {
 
 				case 'groups:join' :
 					$item->icon = 'link';
+					$item->setSection('actions');
+					break;
+
+				case 'discovery:edit' :
+					$item->icon = 'pencil';
+					$item->setText($item->getTooltip());
+					$item->setSection('admin');
+					break;
+
+				case 'discovery:share' :
+					$item->icon = 'share';
+					$item->setText($item->getTooltip());
+					$item->setSection('actions');
+					break;
+
+				case 'quarantine_status' :
+					$item->icon = 'archive';
+					$item->setSection('admin');
 					break;
 			}
 		}
@@ -381,6 +418,7 @@ class Menus {
 		$entity = elgg_extract('entity', $params);
 
 		if ($entity instanceof \ElggObject) {
+			$comments = false;
 			if ($entity->getSubtype() == 'discussion') {
 				$comments = elgg_get_entities([
 					'type' => 'object',
@@ -434,7 +472,8 @@ class Menus {
 	 *
 	 * @return ElggMenuItem[]
 	 */
-	public static function setupWidgetMenu($hook, $type, $return, $params) {
+	public
+	static function setupWidgetMenu($hook, $type, $return, $params) {
 
 		$remove = ['collapse'];
 
@@ -552,7 +591,8 @@ class Menus {
 	 *
 	 * @return ElggMenuItem[]
 	 */
-	public static function setupUserHoverMenu($hook, $type, $return, $params) {
+	public
+	static function setupUserHoverMenu($hook, $type, $return, $params) {
 
 		$remove = ['activity:owner'];
 
@@ -642,7 +682,8 @@ class Menus {
 	 *
 	 * @return ElggMenuItem[]
 	 */
-	public static function setupTitleMenu($hook, $type, $return, $params) {
+	public
+	static function setupTitleMenu($hook, $type, $return, $params) {
 
 		$remove = [];
 
@@ -699,7 +740,8 @@ class Menus {
 	 *
 	 * @return ElggMenuItem[]
 	 */
-	public static function setupExtrasMenu($hook, $type, $return, $params) {
+	public
+	static function setupExtrasMenu($hook, $type, $return, $params) {
 
 		$remove = [];
 
@@ -750,7 +792,8 @@ class Menus {
 	 *
 	 * @return ElggMenuItem[]
 	 */
-	public static function setupPageMenu($hook, $type, $return, $params) {
+	public
+	static function setupPageMenu($hook, $type, $return, $params) {
 
 		$remove = [];
 

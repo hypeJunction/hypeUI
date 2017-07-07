@@ -1,4 +1,3 @@
-
 // Layout
 .elgg-page-nav
   z-index: 12
@@ -174,6 +173,10 @@
   flex-shrink: initial
   align-items: flex-start
 
+.elgg-listing-primer
+  .media-left
+    max-width: 40px
+
 .elgg-subtext
   @extend .is-small
 
@@ -204,10 +207,19 @@
   margin: 4em
   z-index: 100
 
-.elgg-list > .elgg-item
-  @extend .box
-  &:not(:last-child)
-    margin-bottom: 0.5rem
+.elgg-list
+  &.is-borderless > .elgg-item
+    border: none
+    box-shadow: none
+    margin: 0
+    padding: 0.5em
+  &:not(.is-borderless) > .elgg-item
+    @extend .box
+    &:not(:last-child)
+      margin-bottom: 0.5rem
+  &.is-striped
+    & > .elgg-item:nth-child(even)
+      background-color: $white-ter
 
 .elgg-gallery
   @extend .columns
@@ -222,8 +234,46 @@
     .card
       height: 100%
 
-.pagination
+.elgg-pagination
   margin-top: 1em
+  font-size: $size-normal
+  align-items: center
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  text-align: center
+  & > li > a,
+  & > li > span
+    +control
+    +unselectable
+    font-size: 1em
+    padding-left: 0.5em
+    padding-right: 0.5em
+    justify-content: center
+    margin: 0.25rem
+    text-align: center
+    border-color: $pagination-border
+    min-width: 2.25em
+    &:hover
+      border-color: $pagination-hover-border
+      color: $pagination-hover
+    &:focus
+      border-color: $pagination-focus-border
+    &:active
+      box-shadow: $pagination-shadow-inset
+
+  & > li.elgg-state-disabled > a,
+  & > li.elgg-state-disabled > span
+    background-color: $pagination-disabled-background
+    border-color: $pagination-border
+    box-shadow: none
+    color: $pagination-disabled
+    opacity: 0.5
+  & > li.elgg-state-selected > a,
+  & > li.elgg-state-selected > span
+    background-color: $pagination-current-background
+    border-color: $pagination-current-border
+    color: $pagination-current
 
 .elgg-listing-summary-metadata .elgg-tags
   text-align: center
@@ -289,6 +339,9 @@
   display: flex
   flex-direction: column
   list-style: none
+  .content &
+    list-style: none
+    margin: 0
   img
     vertical-align: middle
 
@@ -373,6 +426,7 @@
       width: 200px
       left: 50%
       transform: translate(-50%, 0)
+      box-shadow: 2px 2px 3px rgba(255, 255, 255, 0.3)
       .is-dark &
         background: $dark
   li:hover ul
@@ -831,6 +885,3 @@ fieldset
   color: $grey-light
   cursor: not-allowed
   background: none
-
-.messages-buttonbank
-  margin-top: 1em

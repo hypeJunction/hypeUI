@@ -19,15 +19,12 @@ $vars['class'] = elgg_extract_class($vars, [
 	'clearfix',
 ]);
 
-$flex_class = ['columns'];
+$flex_class = ['columns', 'is-multiline'];
 
 $align = elgg_extract('align', $vars, 'vertical');
 unset($vars['align']);
 $vars['class'][] = "elgg-fieldset-$align";
 $flex_class[] = "is-$align";
-if ($align == 'horizontal') {
-	$flex_class[] = "is-multiline";
-}
 
 $justify = elgg_extract('justify', $vars, '');
 unset($vars['justify']);
@@ -52,7 +49,7 @@ foreach ($fields as $field) {
 	$field['#class'] = (array) elgg_extract('#class', $field, []);
 	$field['#class'][] = 'column';
 	if ($align == 'vertical') {
-		$field['#class'] = 'is-full';
+		$field['#class'][] = 'is-full';
 	}
 	$fieldset .= elgg_view_field($field);
 }

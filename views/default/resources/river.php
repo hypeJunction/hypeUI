@@ -6,7 +6,10 @@
 elgg_get_page_owner_guid(null);
 
 $options = array(
-	'distinct' => false
+	'distinct' => false,
+	'pagination' => true,
+	'pagination_type' => 'infinite',
+	'list_id' => 'river',
 );
 
 $page_type = preg_replace('[\W]', '', elgg_extract('page_type', $vars, 'all'));

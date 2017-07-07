@@ -7,7 +7,8 @@
 
 
 $social = elgg_extract('social', $vars);
-$tags = elgg_extract('tags', $vars);
+$tags = elgg_view('object/elements/summary/badges', $vars);
+$tags .= elgg_extract('tags', $vars);
 $categories = elgg_view('output/categories', $vars);
 
 if ($tags || $social || $categories) { ?>

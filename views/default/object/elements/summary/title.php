@@ -11,7 +11,5 @@ $title = elgg_extract('title', $vars);
 if (!$title) {
 	return;
 }
-
-$badges = elgg_view('object/elements/summary/badges', $vars);
 ?>
-<h3 class="elgg-listing-summary-title title is-3 is-spaced"><?= $title ?><?= $badges ?></h3>
+<h3 class="elgg-listing-summary-title title is-3 is-spaced"><?= $title ?></h3>
