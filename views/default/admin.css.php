@@ -92,6 +92,7 @@ echo elgg_view('elements/helpers.css', $vars);
 .elgg-plugin-list-description {
 	display: inline-block;
 	color: #999;
+    font-size: 0.75em;
 }
 
 .elgg-plugin.elgg-state-active,
