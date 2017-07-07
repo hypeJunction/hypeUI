@@ -62,11 +62,7 @@ echo elgg_view('elements/helpers.css', $vars);
 .elgg-plugin:hover {
 	border-color: #999;
 }
-.elgg-plugin .elgg-head {
-	white-space: nowrap;
-	overflow: hidden;
-	max-width: 100%;
-}
+
 .elgg-plugin.elgg-state-draggable > .elgg-image-block .elgg-head {
 	cursor: move;
 }
@@ -109,7 +105,7 @@ echo elgg_view('elements/helpers.css', $vars);
 
 .elgg-plugin.elgg-state-cannot-activate,
 .elgg-plugin.elgg-state-cannot-activate .elgg-plugin-list-reordering {
-	background: #f7f0d4;
+	background: #fbe9e7;
 }
 .elgg-state-cannot-activate .elgg-image a[disabled],
 .elgg-state-cannot-deactivate .elgg-image a[disabled] {
@@ -120,6 +116,8 @@ echo elgg_view('elements/helpers.css', $vars);
 	float: right;
 	display: none;
 	position: relative;
+    font-size: 12px;
+    padding: 0 0 8px 8px;
 }
 .elgg-plugin:hover .elgg-plugin-list-reordering {
 	display: block;
