@@ -11,11 +11,7 @@
 
 $headers = elgg_extract('show_section_headers', $vars, false);
 
-if (empty($vars['name'])) {
-	$msg = elgg_echo('view:missing_param', ['name', 'navigation/menu/page']);
-	elgg_log($msg, 'WARNING');
-	$vars['name'] = '';
-}
+$vars['name'] = 'page';
 
 $class = 'elgg-menu elgg-menu-page';
 if (isset($vars['class'])) {

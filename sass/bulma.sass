@@ -4,13 +4,17 @@
 @import "../vendor/bower-asset/bulma/bulma.sass"
 
 // Layout
-.elgg-page-topbar
-  z-index: 11
+.elgg-page-nav
+  z-index: 12
   position: relative
 
-.elgg-page-navbar
-  z-index: 10
+.elgg-page-nav.is-alternate
+  z-index: 11
   position: relative
+  border-top: rgba($white, 0.3)
+  .elgg-menu-topbar
+    justify-content: space-around
+    width: 100%
 
 .elgg-layout-navigation
   margin-top: -1em
@@ -325,8 +329,7 @@
   +placeholder
     color: rgba($primary-invert, 0.7)
 
-.elgg-menu-topbar,
-.elgg-menu-site
+.elgg-menu-topbar
   .field
     margin: 0
   .elgg-menu-item-profile
@@ -375,16 +378,18 @@
   li:hover ul
     +tablet
       display: block
+  li ul li
+    padding: 0
   li ul li a
-    padding: 8px 16px
+    padding: 0.5em 1em
     display: inline-block
     border-top: 1px solid rgba($white, 0.2)
     width: 100%
     text-align: left
   li ul li a .icon
-    width: 24px
+    width: 2em
     text-align: center
-    margin-right: 8px
+    margin-right: 0.5em
 
 .elgg-menu-longtext
   float: right
@@ -562,7 +567,7 @@ fieldset
 .elgg-avatar-medium
   max-width: 100px
 
-.icon + .elgg-anchor-label
+.icon + .elgg-anchor-label:not(:empty)
   margin-left: 0.25em
 
 .elgg-icon-hover
@@ -583,6 +588,8 @@ fieldset
 // Modules
 .elgg-module
   margin-bottom: 1rem
+  .elgg-form &
+    margin-bottom: 3rem
   & > .elgg-head
     padding-bottom: 1em
     text-transform: uppercase

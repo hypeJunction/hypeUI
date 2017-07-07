@@ -21,6 +21,7 @@ elgg_register_event_handler('init', 'system', function() {
 	elgg_register_plugin_hook_handler('register', 'menu:topbar', [Menus::class, 'setupTopbarMenu'], 999);
 
 	elgg_unregister_plugin_hook_handler('prepare', 'menu:site', '_elgg_site_menu_setup');
+	elgg_register_plugin_hook_handler('register', 'menu:site', [Menus::class, 'setupSiteMenu'], 999);
 	elgg_register_plugin_hook_handler('prepare', 'menu:site', [Menus::class, 'prepareSiteMenu'], 999);
 
 	elgg_register_plugin_hook_handler('register', 'menu:entity', [Menus::class, 'setupEntityMenu'], 999);
@@ -57,6 +58,9 @@ elgg_register_event_handler('init', 'system', function() {
 	elgg_register_ajax_view('object/elements/menu/contents');
 
 	elgg_unregister_menu_item('footer', 'powered');
+
+	elgg_register_action('theme/assets', __DIR__ . '/actions/theme/assets.php', 'admin');
+	elgg_register_action('theme/layout', __DIR__ . '/actions/theme/layout.php', 'admin');
 });
 
 /**

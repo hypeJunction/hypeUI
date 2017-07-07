@@ -39,7 +39,7 @@ class Menus {
 			$return[] = ElggMenuItem::factory([
 				'name' => 'profile',
 				'section' => 'default',
-				'priority' => 500,
+				'priority' => 900,
 				'text' => $user->getDisplayName(),
 				'icon' => elgg_view_entity_icon($user, 'small', [
 					'use_link' => false,
@@ -100,6 +100,14 @@ class Menus {
 					$item->addLinkClass('has-hidden-label');
 					$item->setPriority(300);
 					break;
+
+				case 'quarantine' :
+					$item->icon = 'archive';
+					break;
+
+				case 'logout' :
+					$item->icon = 'sign-out';
+					break;
 			}
 
 			$return[$key] = $item;
@@ -120,6 +128,32 @@ class Menus {
 	}
 
 	/**
+	 * Setup site menu
+	 *
+	 * @param string         $hook   "register"
+	 * @param string         $type   "menu:site"
+	 * @param ElggMenuItem[] $return Menu
+	 * @param array          $params Hook params
+	 *
+	 * @return ElggMenuItem[]
+	 */
+	public static function setupSiteMenu($hook, $type, $return, $params) {
+		$custom_menu_items = elgg_get_config('site_custom_menu_items');
+
+		if ($custom_menu_items) {
+			// add custom menu items
+			$n = 1;
+			foreach ($custom_menu_items as $title => $url) {
+				$item = new ElggMenuItem("custom$n", $title, $url);
+				$return[] = $item;
+				$n++;
+			}
+		}
+
+		return $return;
+	}
+
+	/**
 	 * Set up the site menu
 	 *
 	 * Handles default, featured, and custom menu items
@@ -128,106 +162,76 @@ class Menus {
 	 */
 	public static function prepareSiteMenu($hook, $type, $return, $params) {
 
-		$featured_menu_names = elgg_get_config('site_featured_menu_names');
-		$custom_menu_items = elgg_get_config('site_custom_menu_items');
+		$featured_menu_names = array_values((array)elgg_get_config('site_featured_menu_names'));
 
-		$more_children = [];
+		$registered = $return['default'];
+		/* @var ElggMenuItem[] $registered */
 
-		if ($featured_menu_names || $custom_menu_items) {
-			// we have featured or custom menu items
+		$has_selected = false;
+		$priority = 500;
+		foreach ($registered as &$item) {
+			if (in_array($item->getName(), $featured_menu_names)) {
+				$featured_index = array_search($item->getName(), $featured_menu_names);
+				$item->setPriority($featured_index);
+			} else {
+				$item->setPriority($priority);
+				$priority++;
+			}
+			if ($item->getSelected()) {
+				$has_selected = true;
+			}
+		}
 
-			$registered = $return['default'];
-			/* @var ElggMenuItem[] $registered */
-
-			// set up featured menu items
-			$featured = [];
-			foreach ($featured_menu_names as $name) {
-				foreach ($registered as $index => $item) {
-					if ($item->getName() == $name) {
-						$featured[] = $item;
-						unset($registered[$index]);
+		if (!$has_selected) {
+			$is_selected = function($item) {
+				$current_url = current_page_url();
+				if (strpos($item->getHref(), elgg_get_site_url()) === 0) {
+					if ($item->getName() == elgg_get_context()) {
+						return true;
+					}
+					if ($item->getHref() == $current_url) {
+						return true;
 					}
 				}
-			}
-
-			// add custom menu items
-			$n = 1;
-			foreach ($custom_menu_items as $title => $url) {
-				$item = new ElggMenuItem("custom$n", $title, $url);
-				$featured[] = $item;
-				$n++;
-			}
-
-
-			if (count($registered) > 0) {
-
-				foreach ($registered as $item) {
-					$item->setParentName('more');
-					$more_children[] = $item;
-				}
-			}
-
-		} else {
-			// no featured menu items set
-			$max_display_items = 5;
-
-			// the first n are shown, rest added to more list
-			// if only one item on more menu, stick it with the rest
-			$num_menu_items = count($return['default']);
-			if ($num_menu_items > ($max_display_items + 1)) {
-				$registered = array_splice($return['default'], $max_display_items);
-				foreach ($registered as $item) {
-					$item->setParentName('more');
-					$more_children[] = $item;
+				return false;
+			};
+			foreach ($registered as &$item) {
+				if ($is_selected($item)) {
+					$item->setSelected(true);
+					break;
 				}
 			}
 		}
 
-		if (!empty($more_children)) {
-			$more = ElggMenuItem::factory([
+		usort($registered, [\ElggMenuBuilder::class, 'compareByPriority']);
+
+		$max_display_items = elgg_get_plugin_setting('site_menu_count', 'hypeUI', 5);
+
+		$num_menu_items = count($registered);
+
+		$more = [];
+		if ($max_display_items && $num_menu_items > ($max_display_items + 1)) {
+			$more = array_splice($registered, $max_display_items);
+		}
+
+		if (!empty($more)) {
+			$dropdown = ElggMenuItem::factory([
 				'name' => 'more',
 				'href' => 'javascript:void(0);',
 				'text' => elgg_echo('more') . elgg_view_icon('caret-down', ['class' => 'elgg-menu-icon-after']),
 				'priority' => 999,
 			]);
 
-			$more->setChildren($more_children);
-
-			$return['default'][] = $more;
-		}
-
-		// check if we have anything selected
-		$selected = false;
-		foreach ($return as $section) {
-			/* @var ElggMenuItem[] $section */
-
-			foreach ($section as $item) {
-				if ($item->getSelected()) {
-					$selected = true;
-					break 2;
-				}
+			foreach ($more as &$item) {
+				$item->setParentName('more');
 			}
+
+			$dropdown->setChildren($more);
+
+			$registered[] = $dropdown;
 		}
 
-		if (!$selected) {
-			// nothing selected, match name to context or match url
-			$current_url = current_page_url();
-			foreach ($return as $section_name => $section) {
-				foreach ($section as $key => $item) {
-					// only highlight internal links
-					if (strpos($item->getHref(), elgg_get_site_url()) === 0) {
-						if ($item->getName() == elgg_get_context()) {
-							$return[$section_name][$key]->setSelected(true);
-							break 2;
-						}
-						if ($item->getHref() == $current_url) {
-							$return[$section_name][$key]->setSelected(true);
-							break 2;
-						}
-					}
-				}
-			}
-		}
+		$return['default'] = $registered;
 
 		return $return;
 	}
@@ -744,6 +748,32 @@ class Menus {
 	public static function setupPageMenu($hook, $type, $return, $params) {
 
 		$remove = [];
+
+		$return[] = ElggMenuItem::factory([
+			'name' => 'theme',
+			'text' => elgg_echo('admin:theme'),
+			'href' => '#',
+			'section' => 'configure',
+			'context' => ['admin'],
+		]);
+
+		$return[] = ElggMenuItem::factory([
+			'name' => 'theme:assets',
+			'text' => elgg_echo('admin:theme:assets'),
+			'href' => 'admin/theme/assets',
+			'section' => 'configure',
+			'parent_name' => 'theme',
+			'context' => ['admin'],
+		]);
+
+		$return[] = ElggMenuItem::factory([
+			'name' => 'theme:layout',
+			'text' => elgg_echo('admin:theme:layout'),
+			'href' => 'admin/theme/layout',
+			'section' => 'configure',
+			'parent_name' => 'theme',
+			'context' => ['admin'],
+		]);
 
 		foreach ($return as $key => $item) {
 			if (in_array($item->getName(), $remove)) {
