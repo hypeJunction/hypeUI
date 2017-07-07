@@ -1,3 +1,23 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/hypeJunction/hypeUI/compare/1.0.2...v1.1.0) (2017-07-07)
+
+
+### Bug Fixes
+
+* **admin:** clean up some styles ([ed4156f](https://github.com/hypeJunction/hypeUI/commit/ed4156f))
+* **listing:** clean up blog and bookmark views ([6310774](https://github.com/hypeJunction/hypeUI/commit/6310774))
+* **menu:** fix user hover ([ae5e8f4](https://github.com/hypeJunction/hypeUI/commit/ae5e8f4))
+
+### Features
+
+* **config:** allow configuring layout element styles ([06c4118](https://github.com/hypeJunction/hypeUI/commit/06c4118))
+* **fixes:** a bunch of fixes and clean up ([e55681b](https://github.com/hypeJunction/hypeUI/commit/e55681b))
+* **list:** add a primer view to display single line entity descriptions ([59b197e](https://github.com/hypeJunction/hypeUI/commit/59b197e))
+* **menus:** better handling of the site menu and topbar ([658bd9a](https://github.com/hypeJunction/hypeUI/commit/658bd9a))
+* **sass:** rearrange stylesheets to make it easier to overwrite in an extending plugin ([27bee56](https://github.com/hypeJunction/hypeUI/commit/27bee56))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/hypeJunction/hypeUI/compare/1.0.1...v1.0.2) (2017-07-06)
 
