@@ -7,8 +7,9 @@ if ($topbar === false) {
 
 $walled = elgg_get_config('walled_garden') && !elgg_is_logged_in();
 $position = elgg_get_plugin_setting('site_menu_position', 'hypeUI', 'topbar');
+$style = elgg_get_plugin_setting('style:topbar', 'hypeUI', 'primary');
 
-$class = elgg_in_context('admin') ? 'is-dark' : 'is-primary';
+$class = elgg_in_context('admin') ? 'is-dark' : "is-$style";
 ?>
     <div class="elgg-page-nav hero <?= $class ?>">
         <div class="elgg-page-topbar">
@@ -95,6 +96,8 @@ $class = elgg_in_context('admin') ? 'is-dark' : 'is-primary';
     </div>
 <?php
 if (!$walled && $position == 'navbar') {
+	$style = elgg_get_plugin_setting('style:navbar', 'hypeUI', 'primary');
+	$class = elgg_in_context('admin') ? 'is-dark' : "is-$style";
 	?>
     <div class="elgg-page-nav hero is-alternate <?= $class ?> is-hidden-mobile">
         <div class="elgg-page-topbar">

@@ -19,6 +19,51 @@ echo elgg_view_field([
 	'name' => 'params[site_menu_count]',
 ]);
 
+
+echo elgg_view_field([
+	'#type' => 'select',
+	'#label' => elgg_echo('admin:theme:layout:sidebar_width'),
+	'value' => elgg_get_plugin_setting('sidebar_width', 'hypeUI', 3),
+	'name' => 'params[sidebar_width]',
+	'options' => range(1, 4),
+]);
+
+echo elgg_view_field([
+	'#type' => 'select',
+	'#label' => elgg_echo('admin:theme:layout:sidebar_alt_width'),
+	'value' => elgg_get_plugin_setting('sidebar_alt_width', 'hypeUI', 3),
+	'name' => 'params[sidebar_alt_width]',
+	'options' => range(1, 4),
+]);
+
+$elements = [
+	'topbar' => 'primary',
+	'navbar' => 'primary',
+	'header' => 'light',
+];
+
+$styles = [
+	'primary',
+	'light',
+	'white',
+	'dark',
+	'danger',
+	'warning',
+	'info',
+	'success',
+];
+
+foreach ($elements as $element => $default) {
+	echo elgg_view_field([
+		'#type' => 'select',
+		'#label' => elgg_echo("admin:theme:layout:style:$element"),
+		'value' => elgg_get_plugin_setting("style:$element", 'hypeUI', $default),
+		'name' => "params[style:$element]",
+		'options' => $styles,
+	]);
+}
+
+
 $footer = elgg_view_field([
 	'#type' => 'submit',
 	'value' => elgg_echo('save'),

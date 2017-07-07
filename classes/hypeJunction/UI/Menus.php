@@ -729,6 +729,11 @@ class Menus {
 					$item->icon = $item->getText();
 					$item->setText($item->getTooltip());
 					break;
+
+				case 'discovery:share' :
+					$item->icon = 'share';
+					$item->setText($item->getTooltip());
+					break;
 			}
 		}
 

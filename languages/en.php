@@ -7,6 +7,8 @@ return [
 	'menu:page:header:user' => 'User Links',
 	'menu:page:header:group' => 'Group Links',
 	'menu:page:header:danger' => 'Danger Zone',
+	'menu:page:header:notications' => 'Notifications',
+	'menu:page:header:1_profile' => 'Profile',
 
 	'menu:extras:header:default' => 'Extras',
 
@@ -32,4 +34,10 @@ return [
 	'admin:theme:layout:site_menu_count' => 'Featured Items',
 	'admin:theme:layout:site_menu_count:help' => 'Maximum number of main menu items to show before adding a More menu item. Set to 0 to display all items without More',
 
+	'admin:theme:layout:sidebar_width' => 'Right Sidebar Width',
+	'admin:theme:layout:sidebar_alt_width' => 'Left Sidebar Width',
+
+	'admin:theme:layout:style:topbar' => 'Topbar Style',
+	'admin:theme:layout:style:navbar' => 'Navbar Style',
+	'admin:theme:layout:style:header' => 'Header Style',
 ];
