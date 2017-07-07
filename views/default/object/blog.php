@@ -13,11 +13,11 @@ if ($entity->status !== 'published') {
 	], elgg_echo("status:{$entity->status}"));
 }
 
-if ($entity->excerpt) {
-	$vars['tagline'] = elgg_view('output/longtext', [
-		'value' => $entity->excerpt,
-	]);
-}
+//if ($entity->excerpt) {
+//	$vars['tagline'] = elgg_view('output/longtext', [
+//		'value' => $entity->excerpt,
+//	]);
+//}
 
 if ($blog->comments_on == 'Off' || $blog->status !== 'published') {
 	$params['responses'] = false;

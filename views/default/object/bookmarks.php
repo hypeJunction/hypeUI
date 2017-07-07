@@ -11,7 +11,7 @@ $link = elgg_view('output/url', [
 	'href' => $entity->address, 'text' => elgg_get_excerpt($entity->address, 100),
 ]);
 
-$vars['tagline'] = elgg_view_icon('push-pin-alt') . $link;
+$vars['inline_content'] = elgg_view_icon('push-pin-alt') . $link;
 
 if ($full) {
 	echo elgg_view('object/elements/full', $vars);
