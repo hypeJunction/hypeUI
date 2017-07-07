@@ -177,6 +177,10 @@
 .elgg-subtext
   @extend .is-small
 
+.elgg-anchor-label
+  .title &, .subtitle &
+    font-weight: inherit
+
 // Components
 .elgg-table, .elgg-table-alt, .theme-sandbox-table
   @extend .table
@@ -382,10 +386,6 @@
     border-top: 1px solid rgba($white, 0.2)
     width: 100%
     text-align: left
-  li ul li a .icon
-    width: 2em
-    text-align: center
-    margin-right: 0.5em
 
 .elgg-menu-longtext
   float: right
@@ -427,10 +427,6 @@
   a
     color: $primary
     font-weight: 600
-
-.elgg-menu-page .icon
-  width: 1.5em
-  text-align: center
 
 .elgg-menu-page .elgg-child-menu
   display: none
@@ -563,8 +559,12 @@ fieldset
 .elgg-avatar-medium
   max-width: 100px
 
-.icon + .elgg-anchor-label:not(:empty)
-  margin-left: 0.25em
+.icon
+  .elgg-menu > li &
+    width: 1.5em
+    text-align: center
+  & + .elgg-anchor-label:not(:empty)
+    margin-left: 0.25em
 
 .elgg-icon-hover
   color: $info
@@ -628,10 +628,6 @@ fieldset
     display: block
     &:hover
       background-color: $white-ter
-    .icon
-      width: 2em
-      text-align: center
-      margin-right: 0.5em
   .elgg-no-results
     font-size: 0.75em
     padding: 0.5em 1em

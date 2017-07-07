@@ -8007,6 +8007,10 @@ label.panel-block:hover {
   align-items: flex-start;
 }
 
+.title .elgg-anchor-label, .subtitle .elgg-anchor-label {
+  font-weight: inherit;
+}
+
 .elgg-image img {
   vertical-align: middle;
 }
@@ -8257,11 +8261,6 @@ label.panel-block:hover {
   width: 100%;
   text-align: left;
 }
-.elgg-menu-topbar li ul li a .icon {
-  width: 2em;
-  text-align: center;
-  margin-right: 0.5em;
-}
 
 .elgg-menu-longtext {
   float: right;
@@ -8342,11 +8341,6 @@ label.panel-block:hover {
 .elgg-menu-page-actions a {
   color: #0398e2;
   font-weight: 600;
-}
-
-.elgg-menu-page .icon {
-  width: 1.5em;
-  text-align: center;
 }
 
 .elgg-menu-page .elgg-child-menu {
@@ -8476,6 +8470,10 @@ fieldset {
   max-width: 100px;
 }
 
+.elgg-menu > li .icon {
+  width: 1.5em;
+  text-align: center;
+}
 .icon + .elgg-anchor-label:not(:empty) {
   margin-left: 0.25em;
 }
@@ -8563,14 +8561,6 @@ fieldset {
 .elgg-object-menu-popup ul > li > a:hover,
 .elgg-object-menu-popup ul > li > span:hover {
   background-color: whitesmoke;
-}
-.elgg-menu-hover ul > li > a .icon,
-.elgg-menu-hover ul > li > span .icon,
-.elgg-object-menu-popup ul > li > a .icon,
-.elgg-object-menu-popup ul > li > span .icon {
-  width: 2em;
-  text-align: center;
-  margin-right: 0.5em;
 }
 .elgg-menu-hover .elgg-no-results,
 .elgg-object-menu-popup .elgg-no-results {
