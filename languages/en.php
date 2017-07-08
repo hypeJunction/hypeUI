@@ -9,8 +9,7 @@ return [
 	'menu:page:header:danger' => 'Danger Zone',
 	'menu:page:header:notications' => 'Notifications',
 	'menu:page:header:1_profile' => 'Profile',
-
-	'menu:extras:header:default' => 'Extras',
+	'menu:page:header:extras' => 'Extras',
 
 	'object:menu:no_results' => 'This item has no additional options',
 
@@ -26,6 +25,7 @@ return [
 	'admin:theme:settings_saved' => 'Settings have been saved',
 
 	'admin:theme:asset:topbar_logo' => 'Topbar Logo',
+	'admin:theme:asset:landing_hero' => 'Background of the landing page hero',
 
 	'admin:theme:layout:site_menu_position' => 'Main Menu Positioning',
 	'admin:theme:layout:site_menu_position:topbar' => 'Topbar (next to the logo)',
@@ -40,4 +40,14 @@ return [
 	'admin:theme:layout:style:topbar' => 'Topbar Style',
 	'admin:theme:layout:style:navbar' => 'Navbar Style',
 	'admin:theme:layout:style:header' => 'Header Style',
+	'admin:theme:layout:style:landing_hero' => 'Landing Hero Style',
+
+	'admin:theme:layout:landing:title' => 'Landing Page Title',
+	'admin:theme:layout:landing:subtitle' => 'Landing Page Subtitle',
+	'admin:theme:layout:landing:info' => 'Landing Page Info',
+	'admin:theme:layout:landing:module' => 'Landing Page Right Module',
+	'admin:theme:layout:sidebar:before' => 'Sidebar Top',
+	'admin:theme:layout:sidebar:after' => 'Sidebar Bottom',
+	'admin:theme:layout:footer' => 'Footer',
+
 ];

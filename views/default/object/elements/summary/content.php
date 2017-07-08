@@ -6,10 +6,11 @@
  */
 
 $content = elgg_extract('content', $vars);
-if (!$content) {
+$media = elgg_extract('media', $vars);
+
+if (!$content && $media) {
 	return;
 }
-$media = elgg_extract('media', $vars);
 
 echo elgg_view_image_block('', $content, [
 	'image_alt' => $media,

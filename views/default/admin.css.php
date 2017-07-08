@@ -48,10 +48,10 @@ echo elgg_view('elements/helpers.css', $vars);
 	PLUGINS
 **************************************** */
 .elgg-list > li.elgg-item-object-plugin {
-    margin: 0;
+    margin: 0 0 2px !important;
     padding: 0 !important;
     border: 0 !important;
-    box-shadow: none !important
+    box-shadow: none !important;
     background: none !important;
 }
 
@@ -59,6 +59,7 @@ echo elgg_view('elements/helpers.css', $vars);
 	border: 1px solid #CCC;
 	padding: 0.5em;
 	border-radius: 5px;
+    position: relative;
 }
 .elgg-plugin:hover {
 	border-color: #999;
@@ -115,11 +116,13 @@ echo elgg_view('elements/helpers.css', $vars);
 }
 
 .elgg-plugin-list-reordering {
-	float: right;
-	display: none;
-	position: relative;
     font-size: 12px;
-    padding: 0 0 8px 8px;
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    flex-direction: row;
+    margin: 2px;
 }
 .elgg-plugin:hover .elgg-plugin-list-reordering {
 	display: block;

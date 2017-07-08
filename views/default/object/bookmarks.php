@@ -7,11 +7,16 @@ if (!$entity instanceof ElggEntity) {
 	return;
 }
 
-$link = elgg_view('output/url', [
-	'href' => $entity->address, 'text' => elgg_get_excerpt($entity->address, 100),
-]);
-
-$vars['inline_content'] = elgg_view_icon('push-pin-alt') . $link;
+if (elgg_is_active_plugin('hypeScraper')) {
+	$vars['attachments'] = elgg_view('output/card', [
+		'href' => $entity->address,
+	]);
+} else {
+	$link = elgg_view('output/url', [
+		'href' => $entity->address, 'text' => elgg_get_excerpt($entity->address, 100),
+	]);
+	$vars['inline_content'] = elgg_view_icon('push-pin-alt') . $link;
+}
 
 if ($full) {
 	echo elgg_view('object/elements/full', $vars);

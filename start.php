@@ -21,7 +21,7 @@ elgg_register_event_handler('init', 'system', function () {
 	elgg_register_plugin_hook_handler('register', 'menu:topbar', [Menus::class, 'setupTopbarMenu'], 999);
 
 	elgg_unregister_plugin_hook_handler('prepare', 'menu:site', '_elgg_site_menu_setup');
-	elgg_register_plugin_hook_handler('register', 'menu:site', [Menus::class, 'setupSiteMenu'], 999);
+	elgg_register_plugin_hook_handler('register', 'menu:site', [Menus::class, 'setupSiteMenu']);
 	elgg_register_plugin_hook_handler('prepare', 'menu:site', [Menus::class, 'prepareSiteMenu'], 999);
 
 	elgg_register_plugin_hook_handler('register', 'menu:entity', [Menus::class, 'setupEntityMenu'], 999);

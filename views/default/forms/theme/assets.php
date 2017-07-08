@@ -2,6 +2,7 @@
 
 $names = [
 	'topbar_logo',
+	'landing_hero',
 ];
 
 foreach ($names as $name) {

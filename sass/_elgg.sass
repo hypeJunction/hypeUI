@@ -45,6 +45,14 @@
       .media-content
         text-align: center
 
++mobile
+  .elgg-layout-main
+    order: 10
+  .elgg-layout-sidebar-alt
+    order: 20
+  .elgg-layout-sidebar
+    order: 30
+
 .elgg-col-1of1
   @extend .column
   @extend .is-full
@@ -142,9 +150,6 @@
 .elgg-listing-summary-content
   margin-top: 1em
 
-.elgg-listing-summary-header
-  align-items: center
-
 .elgg-listing-summary-metadata
   margin-top: 1em
 
@@ -175,7 +180,8 @@
 
 .elgg-listing-primer
   .media-left
-    max-width: 40px
+    width: 40px
+    text-align: center
 
 .elgg-subtext
   @extend .is-small
@@ -195,12 +201,17 @@
 .elgg-image-block
   &.is-vcentered
     align-items: center
+  .media-content
+    max-width: 100%
+    word-break: break-word
+  .media-right
+    max-width: 50%
 
 .elgg-message
   @extend .notification
 
 .elgg-system-messages
-  position: absolute
+  position: fixed
   width: 300px
   top: 0
   right: 0
@@ -218,8 +229,14 @@
     &:not(:last-child)
       margin-bottom: 0.5rem
   &.is-striped
+    & > .elgg-item
+      border-radius: $radius-small
     & > .elgg-item:nth-child(even)
-      background-color: $white-ter
+      background-color: rgba($white, 0.8)
+    & > .elgg-item:nth-child(odd)
+      background-color: rgba($white-ter, 0.8)
+  & + .elgg-list
+    margin-top: 1em
 
 .elgg-gallery
   @extend .columns
@@ -278,9 +295,17 @@
 .elgg-listing-summary-metadata .elgg-tags
   text-align: center
 
-.elgg-tag
-  @extend .tag
-  margin-right: 4px
+.elgg-listing-summary
+  .level-left, .level-right, .level-item
+    flex-shrink: 1
+  .level-item
+    display: block
+
+.tag
+  margin: 2px
+  a
+    color: inherit
+
 
 .profile-details
   padding: 0
@@ -302,6 +327,8 @@
 
 .elgg-river-selector
   margin-bottom: 1em
+  select
+    max-width: 10em
 
 .elgg-river-selector .elgg-field
   display: inline-block
@@ -443,8 +470,9 @@
 
 .elgg-menu-longtext
   float: right
-  margin-top: -1.5em
   font-size: 0.75em
+  .elgg-field &
+    margin-top: -1.5em
 
 .elgg-menu-river,
 .elgg-menu-annotation
@@ -617,6 +645,7 @@ fieldset
   .elgg-menu > li &
     width: 1.5em
     text-align: center
+    vertical-align: middle
   & + .elgg-anchor-label:not(:empty)
     margin-left: 0.25em
 
@@ -650,7 +679,7 @@ fieldset
 .elgg-module-popup
   @extend .box
   position: absolute
-  z-index: 1001
+  z-index: 1201 // above lightbox
   max-width: 600px
 
 .elgg-menu-hover,
@@ -707,6 +736,8 @@ fieldset
 
 .elgg-module-menu
   float: right
+  max-width: 50%
+  text-align: right
 
 .elgg-module-widget
   @extend .box

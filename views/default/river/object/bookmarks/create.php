@@ -10,9 +10,16 @@ $item = $vars['item'];
 
 $object = $item->getObjectEntity();
 
-$vars['attachments'] = elgg_view_entity($object, [
-	'class' => 'box',
-	'full_view' => false,
-]);
+if (elgg_is_active_plugin('hypeScraper')) {
+	$vars['attachments'] = elgg_view('output/card', [
+		'href' => $object->address,
+	]);
+} else {
+	$link = elgg_view('output/url', [
+		'href' => $object->address, 'text' => elgg_get_excerpt($object->address, 100),
+	]);
+	$vars['attachments'] = elgg_view_icon('push-pin-alt') . $link;
+	$vars['message'] = elgg_get_excerpt($object->description);
+}
 
 echo elgg_view('river/elements/layout', $vars);

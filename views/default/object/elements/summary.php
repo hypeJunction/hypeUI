@@ -21,6 +21,7 @@ $entity = elgg_extract('entity', $vars);
 $full_view = elgg_extract('full_view', $vars);
 if (!$entity instanceof ElggEntity) {
 	elgg_log("object/elements/summary expects an ElggEntity in \$vars['entity']", 'ERROR');
+
 	return;
 }
 
@@ -34,20 +35,32 @@ if ($entity instanceof ElggObject) {
 	$owner = $entity->getOwnerEntity();
 	if ($entity->owner_guid && !$owner) {
 		elgg_log("User {$entity->owner_guid} could not be loaded, and is needed to display entity {$entity->guid}", 'WARNING');
+
 		return;
 	}
 
 	$container = $entity->getContainerEntity();
 	if ($entity->container_guid && !$container) {
 		elgg_log("Entity {$entity->container_guid} could not be loaded, and is needed to display entity {$entity->guid}", 'WARNING');
+
 		return;
 	}
 }
 
 $title = elgg_extract('title', $vars);
 if (empty($title) && $title !== false && $entity instanceof ElggEntity) {
+	if (elgg_is_active_plugin('search') && get_input('query')) {
+		if ($entity->getVolatileData('search_matched_title')) {
+			$title = $entity->getVolatileData('search_matched_title');
+		} else {
+			$title = search_get_highlighted_relevant_substrings($entity->getDisplayName(), get_input('query'), 5, 5000);
+		}
+	} else {
+		$title = elgg_get_excerpt($entity->getDisplayName(), 100);
+	}
+
 	$vars['title'] = elgg_view('output/url', [
-		'text' => elgg_get_excerpt($entity->getDisplayName(), 100),
+		'text' => $title,
 		'href' => $entity->getURL(),
 	]);
 }
@@ -61,7 +74,15 @@ $content = elgg_extract('content', $vars);
 if (empty($content) && $content !== false && $entity) {
 	foreach (['briefdescription', 'description'] as $prop) {
 		if ($entity->$prop) {
-			$vars['content'] = elgg_get_excerpt($entity->$prop, 1000);
+			$description = elgg_get_excerpt($entity->$prop, elgg_extract('content_limit', $vars, 1000));
+			if (elgg_is_active_plugin('search') && get_input('query')) {
+				if ($entity->getVolatileData('search_matched_description')) {
+					$description = $entity->getVolatileData('search_matched_description');
+				} else {
+					$description = search_get_highlighted_relevant_substrings($description, get_input('query'), 5, 5000);
+				}
+			}
+			$vars['content'] = $description;
 		}
 	}
 }
@@ -114,6 +135,6 @@ $body = elgg_view('object/elements/summary/body', $vars);
 $footer = elgg_view('object/elements/summary/footer', $vars);
 
 echo elgg_format_element('div', [
-	'class' => elgg_extract_class($vars,'elgg-listing-summary'),
+	'class' => elgg_extract_class($vars, 'elgg-listing-summary'),
 	'data-guid' => $entity->guid,
 ], $header . $body . $footer);

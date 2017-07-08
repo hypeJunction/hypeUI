@@ -15,6 +15,17 @@ $params['show_section_headers'] = true;
 
 $entity = elgg_extract('entity', $vars);
 
+$info = elgg_get_plugin_setting('sidebar:before', 'hypeUI');
+if ($info) {
+	$info = elgg_view('output/longtext', [
+		'class' => 'content',
+		'value' => $info,
+	]);
+	echo elgg_view_module('aside', null, $info, [
+		'class' => 'elgg-sidebar-module',
+	]);
+}
+
 if ($entity instanceof ElggEntity) {
 	$params['handler'] = hypeapps_ui_get_entity_handler($entity);
 
@@ -93,4 +104,15 @@ if ($extras_menu) {
 	echo elgg_format_element('div', [
 		'class' => 'elgg-module menu',
 	], $extras_menu);
+}
+
+$info = elgg_get_plugin_setting('sidebar:after', 'hypeUI');
+if ($info) {
+	$info = elgg_view('output/longtext', [
+		'class' => 'content',
+		'value' => $info,
+	]);
+	echo elgg_view_module('aside', null, $info, [
+		'class' => 'elgg-sidebar-module',
+	]);
 }

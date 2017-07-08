@@ -40,6 +40,7 @@ $elements = [
 	'topbar' => 'primary',
 	'navbar' => 'primary',
 	'header' => 'light',
+	'landing_hero' => 'primary',
 ];
 
 $styles = [
@@ -63,6 +64,24 @@ foreach ($elements as $element => $default) {
 	]);
 }
 
+$landing_elements = [
+	'landing:title' => 'text',
+	'landing:subtitle' => 'text',
+	'landing:info' => 'longtext',
+	'landing:module' => 'longtext',
+	'sidebar:before' => 'longtext',
+	'sidebar:after' => 'longtext',
+	'footer' => 'longtext',
+];
+
+foreach ($landing_elements as $element => $type) {
+	echo elgg_view_field([
+		'#type' => $type,
+		'#label' => elgg_echo("admin:theme:layout:$element"),
+		'value' => elgg_get_plugin_setting("$element", 'hypeUI'),
+		'name' => "params[$element]",
+	]);
+}
 
 $footer = elgg_view_field([
 	'#type' => 'submit',

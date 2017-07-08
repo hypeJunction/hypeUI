@@ -26,4 +26,10 @@
 		<priority>before</priority>
 	</suggests>
 
+	<suggests>
+		<type>priority</type>
+		<plugin>hypeDiscussions</plugin>
+		<priority>before</priority>
+	</suggests>
+
 </plugin_manifest>

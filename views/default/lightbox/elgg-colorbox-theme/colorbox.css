@@ -54,6 +54,11 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    box-shadow: none;
+}
+
+#cboxLoadedContent > .elgg-module:only-child {
+    margin: 0;
 }
 
 #cboxTitle {

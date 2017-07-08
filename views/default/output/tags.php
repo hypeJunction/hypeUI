@@ -38,7 +38,7 @@ if (isset($vars['list_class'])) {
 	unset($vars['list_class']);
 }
 
-$item_class = "elgg-tag";
+$item_class = "elgg-tag tag is-light";
 if (isset($vars['item_class'])) {
 	$item_class = "$item_class {$vars['item_class']}";
 	unset($vars['item_class']);
@@ -50,8 +50,12 @@ $params = $vars;
 foreach ($tags as $tag) {
 	if (is_string($tag) && strlen($tag) > 0) {
 		$params['value'] = $tag;
-		$params['class'] = $item_class;
-		$list_items .= elgg_view('output/tag', $params);
+		$li = elgg_view('output/tag', $params);
+		if ($li) {
+			$list_items .= elgg_format_element('div', [
+				'class' => $item_class,
+			], $li);
+		}
 	}
 }
 

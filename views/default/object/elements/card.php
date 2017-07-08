@@ -40,7 +40,7 @@ $content = elgg_extract('content', $vars);
 if (empty($content) && $content !== false && $entity) {
 	foreach (['excerpt', 'briefdescription', 'description'] as $prop) {
 		if ($entity->$prop) {
-			$vars['content'] = elgg_get_excerpt($entity->$prop, 1000);
+			$vars['content'] = elgg_get_excerpt($entity->$prop, elgg_extract('content_limit', $vars, 250));
 		}
 	}
 }

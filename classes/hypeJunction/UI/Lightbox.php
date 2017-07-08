@@ -25,8 +25,8 @@ class Lightbox {
 			'opacity' => 0.5,
 			'maxWidth' => '990px',
 			'maxHeight' => '990px',
-			'initialWidth' => '300px',
-			'initialHeight' => '300px',
+			'initialWidth' => '600px',
+			'initialHeight' => '600px',
 		];
 
 		return $return;

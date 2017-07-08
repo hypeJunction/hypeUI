@@ -46,7 +46,7 @@ $vars['responses'] = function($entity, $full) {
 };
 
 if ($entity->status == 'closed') {
-	$vars['badges'] = elgg_format_element('span', [
+	$vars['badges'] .= elgg_format_element('span', [
 		'class' => 'tag is-danger',
 	], elgg_view_icon('lock'));
 }
