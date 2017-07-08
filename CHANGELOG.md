@@ -1,3 +1,13 @@
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/hypeJunction/hypeUI/compare/1.2.0...v1.2.1) (2017-07-08)
+
+
+### Bug Fixes
+
+* **css:** oops ([87053c3](https://github.com/hypeJunction/hypeUI/commit/87053c3))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/hypeJunction/hypeUI/compare/1.1.0...v1.2.0) (2017-07-08)
 
