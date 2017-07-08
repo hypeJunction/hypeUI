@@ -1,3 +1,13 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/hypeJunction/hypeUI/compare/1.1.0...v1.2.0) (2017-07-08)
+
+
+### Features
+
+* **ui:** another round of fixes ([ea277e7](https://github.com/hypeJunction/hypeUI/commit/ea277e7))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/hypeJunction/hypeUI/compare/1.0.2...v1.1.0) (2017-07-07)
 
