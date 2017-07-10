@@ -7,7 +7,7 @@ if ($content === false) {
 <div class="elgg-layout-content">
     <div class="elgg-inner container">
         <?= elgg_view('page/layouts/elements/navigation', $vars) ?>
-        <div class="columns">
+        <div class="elgg-layout-columns columns">
 			<?php
 			echo elgg_view('page/layouts/elements/sidebar_alt', $vars);
 			echo elgg_view('page/layouts/elements/main', $vars);

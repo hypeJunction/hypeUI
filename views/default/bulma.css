@@ -7933,6 +7933,10 @@ label.panel-block:hover {
 }
 
 @media screen and (max-width: 768px) {
+  .elgg-layout-columns {
+    display: flex;
+  }
+
   .elgg-layout-main {
     order: 10;
   }
@@ -8068,6 +8072,10 @@ label.panel-block:hover {
 }
 .elgg-list + .elgg-list {
   margin-top: 1em;
+}
+
+.elgg-no-results {
+  padding: 0.5em;
 }
 
 .elgg-gallery {
@@ -8597,7 +8605,6 @@ fieldset {
 .elgg-menu > li .icon {
   width: 1.5em;
   text-align: center;
-  vertical-align: middle;
 }
 .icon + .elgg-anchor-label:not(:empty) {
   margin-left: 0.25em;
@@ -8629,6 +8636,12 @@ fieldset {
   color: #7a7a7a;
   font-size: 0.8em;
   letter-spacing: 0.1em;
+}
+.elgg-module.is-borderless {
+  border: none !important;
+}
+.elgg-module.is-paddingless {
+  padding: 0 !important;
 }
 
 .elgg-module-popup {

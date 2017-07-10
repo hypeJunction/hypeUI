@@ -46,6 +46,8 @@
         text-align: center
 
 +mobile
+  .elgg-layout-columns
+    display: flex
   .elgg-layout-main
     order: 10
   .elgg-layout-sidebar-alt
@@ -237,6 +239,9 @@
       background-color: rgba($white-ter, 0.8)
   & + .elgg-list
     margin-top: 1em
+
+.elgg-no-results
+  padding: 0.5em
 
 .elgg-gallery
   @extend .columns
@@ -645,7 +650,6 @@ fieldset
   .elgg-menu > li &
     width: 1.5em
     text-align: center
-    vertical-align: middle
   & + .elgg-anchor-label:not(:empty)
     margin-left: 0.25em
 
@@ -675,6 +679,10 @@ fieldset
     color: $text-light
     font-size: .8em
     letter-spacing: .1em
+  &.is-borderless
+    border: none !important
+  &.is-paddingless
+    padding: 0 !important
 
 .elgg-module-popup
   @extend .box
