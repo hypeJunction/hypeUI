@@ -9,7 +9,7 @@ if (elgg_in_context('admin')) {
 		'class' => 'title is-4',
 	]);
 } else {
-	$text = $site->url;
+	$text = $site->name;
 
 	$view = elgg_get_plugin_setting('asset:topbar_logo', 'hypeUI');
 	if ($view && elgg_view_exists($view)) {
