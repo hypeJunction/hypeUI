@@ -50,20 +50,20 @@ $layout_attrs = elgg_format_attributes(array(
 	'data-page-owner-guid' => $owner->guid,
 		));
 
-if (elgg_can_edit_widget_layout($context)) {
-	if ($show_add_widgets) {
+if ($show_add_widgets) {
+	if (elgg_can_edit_widget_layout($context)) {
 		$controls = elgg_view('page/layouts/widgets/add_button');
+		$params = [
+			'widgets' => $widgets,
+			'context' => $context,
+			'exact_match' => $exact_match,
+			'show_access' => $show_access,
+		];
+		$controls .= elgg_view('page/layouts/widgets/add_panel', $params);
+		echo elgg_format_element('div', [
+			'class' => 'elgg-layout-widgets-controls clearfix',
+		], $controls);
 	}
-	$params = array(
-		'widgets' => $widgets,
-		'context' => $context,
-		'exact_match' => $exact_match,
-		'show_access' => $show_access,
-	);
-	$controls .= elgg_view('page/layouts/widgets/add_panel', $params);
-	echo elgg_format_element('div', [
-		'class' => 'elgg-layout-widgets-controls clearfix',
-	], $controls);
 }
 
 if (isset($vars['content'])) {

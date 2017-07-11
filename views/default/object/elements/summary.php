@@ -71,7 +71,7 @@ if (empty($subtitle) && $subtitle !== false && $entity instanceof ElggObject) {
 }
 
 $content = elgg_extract('content', $vars);
-if (empty($content) && $content !== false && $entity) {
+if (empty($content) && $content !== false) {
 	foreach (['briefdescription', 'description'] as $prop) {
 		if ($entity->$prop) {
 			$description = elgg_get_excerpt($entity->$prop, elgg_extract('content_limit', $vars, 1000));

@@ -7900,10 +7900,6 @@ label.panel-block:hover {
   padding: 2em 0;
 }
 
-.elgg-layout-widgets {
-  margin-top: 1.5em;
-}
-
 .elgg-layout-owner-block .elgg-image-block {
   align-items: center;
 }
@@ -7984,14 +7980,34 @@ label.panel-block:hover {
 .elgg-listing-summary-content {
   margin-top: 1em;
 }
+.elgg-listing-summary-content .elgg-listing-media-right {
+  float: right;
+  padding: 0 0 1em 1em;
+}
 
 .elgg-listing-summary-metadata {
   margin-top: 1em;
 }
+@media screen and (max-width: 768px) {
+  .elgg-listing-summary-metadata {
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.elgg-module-widget .elgg-listing-summary-metadata {
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
 .elgg-listing-summary-menu {
   float: right;
-  margin: 0.5em 0 0.5em 0.5em;
+  margin: 0 0 0.5em 0.5em;
+}
+
+.elgg-listing-summary-attachments {
+  margin-top: 0.5em;
 }
 
 .elgg-listing-full .elgg-listing-summary-body {
@@ -8022,6 +8038,11 @@ label.panel-block:hover {
 .elgg-listing-primer .media-left {
   width: 40px;
   text-align: center;
+}
+
+.media .media {
+  border: none;
+  padding: 0;
 }
 
 .title .elgg-anchor-label, .subtitle .elgg-anchor-label {
@@ -8255,6 +8276,9 @@ label.panel-block:hover {
 .elgg-menu img {
   vertical-align: middle;
 }
+.tabs .elgg-menu {
+  flex-direction: row;
+}
 
 @media screen and (min-width: 769px), print {
   .has-hidden-label .elgg-anchor-label {
@@ -8396,7 +8420,7 @@ label.panel-block:hover {
   float: right;
   font-size: 0.75em;
 }
-.elgg-field .elgg-menu-longtext {
+.elgg-field-label + .control > .elgg-menu-longtext {
   margin-top: -1.5em;
 }
 
@@ -8419,6 +8443,16 @@ label.panel-block:hover {
 .elgg-menu-entity-social a,
 .elgg-menu-entity-social span {
   color: #363636;
+  display: inline-block;
+}
+.elgg-menu-entity a.icon, .elgg-menu-entity span.icon,
+.elgg-menu-annotation a.icon,
+.elgg-menu-annotation span.icon,
+.elgg-menu-river a.icon,
+.elgg-menu-river span.icon,
+.elgg-menu-entity-social a.icon,
+.elgg-menu-entity-social span.icon {
+  display: inline-flex;
 }
 .elgg-menu-entity > li + li,
 .elgg-menu-annotation > li + li,
@@ -8624,6 +8658,14 @@ fieldset {
   display: none;
 }
 
+.float {
+  float: left;
+}
+
+.float-alt {
+  float: right;
+}
+
 .elgg-module {
   margin-bottom: 1rem;
 }
@@ -8639,6 +8681,7 @@ fieldset {
 }
 .elgg-module.is-borderless {
   border: none !important;
+  box-shadow: none !important;
 }
 .elgg-module.is-paddingless {
   padding: 0 !important;
@@ -8654,7 +8697,7 @@ fieldset {
 .elgg-object-menu-popup {
   padding: 0;
   position: absolute;
-  z-index: 1001;
+  z-index: 1201;
   width: 12rem;
   overflow: hidden;
 }
@@ -8759,6 +8802,10 @@ fieldset {
 
 .elgg-widgets {
   min-height: 2em;
+}
+
+.elgg-layout-widgets-controls {
+  margin-bottom: 1.5em;
 }
 
 .elgg-widget-add-control {
@@ -8962,9 +9009,12 @@ fieldset {
 .elgg-listing-summary .scraper-card-video {
   min-width: 200px;
 }
+.elgg-module-widget .elgg-listing-summary .scraper-card-video {
+  width: 100%;
+}
 
 .elgg-module.elgg-module-scraper-card {
-  background: #eee;
+  background: whitesmoke;
   border-radius: 3px;
   box-shadow: none;
 }
@@ -8995,4 +9045,30 @@ fieldset {
 
 .interactions-component .message {
   margin: 1em auto;
+}
+
+.elgg-form ul.tagit {
+  border-color: #dbdbdb;
+  border-radius: 3px;
+}
+.elgg-form ul.tagit li.tagit-choice {
+  border-color: #4a4a4a;
+  background: whitesmoke;
+  color: #212121;
+}
+.elgg-form ul.tagit li.tagit-choice:hover {
+  background: #7a7a7a;
+  background: whitesmoke;
+}
+.elgg-form .elgg-input-dropzone {
+  border-color: #dbdbdb;
+  border-radius: 3px;
+}
+.elgg-form .elgg-dropzone-instructions .icon .elgg-icon-cloud-upload {
+  font-size: 40px !important;
+  color: #b5b5b5;
+}
+.elgg-form .elgg-dropzone-instructions strong,
+.elgg-form .elgg-dropzone-instructions span {
+  color: #b5b5b5;
 }

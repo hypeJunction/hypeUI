@@ -5,7 +5,7 @@
 
 $filter = elgg_extract('filter', $vars);
 
-if (!isset($filter)) {
+if (!isset($filter) && $filter !== false) {
 	$filter = elgg_view_menu('filter', [
 		'sort_by' => 'priority',
 		'class' => 'elgg-menu-hz',

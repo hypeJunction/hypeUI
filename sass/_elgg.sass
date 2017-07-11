@@ -20,7 +20,6 @@
 
 .elgg-layout-widgets
   @extend .columns
-  margin-top: 1.5em
 
 .elgg-layout-owner-block
   .elgg-image-block
@@ -151,13 +150,27 @@
 
 .elgg-listing-summary-content
   margin-top: 1em
+  .elgg-listing-media-right
+    float: right
+    padding: 0 0 1em 1em
 
 .elgg-listing-summary-metadata
   margin-top: 1em
+  +mobile
+    justify-content: center
+    flex-direction: column
+    align-items: flex-start
+  .elgg-module-widget &
+    justify-content: center
+    flex-direction: column
+    align-items: flex-start
 
 .elgg-listing-summary-menu
   float: right
-  margin: 0.5em 0 0.5em 0.5em
+  margin: 0 0 0.5em 0.5em
+
+.elgg-listing-summary-attachments
+  margin-top: 0.5em
 
 .elgg-listing-full .elgg-listing-summary-body
   margin: 2em auto
@@ -184,6 +197,10 @@
   .media-left
     width: 40px
     text-align: center
+
+.media .media
+  border: none
+  padding: 0
 
 .elgg-subtext
   @extend .is-small
@@ -311,7 +328,6 @@
   a
     color: inherit
 
-
 .profile-details
   padding: 0
 
@@ -376,6 +392,8 @@
     margin: 0
   img
     vertical-align: middle
+  .tabs &
+    flex-direction: row
 
 .has-hidden-label
   +tablet
@@ -476,7 +494,7 @@
 .elgg-menu-longtext
   float: right
   font-size: 0.75em
-  .elgg-field &
+  .elgg-field-label + .control > &
     margin-top: -1.5em
 
 .elgg-menu-river,
@@ -490,6 +508,9 @@
   font-size: .75rem
   a, span
     color: $grey-darker
+    display: inline-block
+    &.icon
+      display: inline-flex
   & > li + li
     margin-left: 1em
   & + &
@@ -668,6 +689,12 @@ fieldset
 .hidden
   display: none
 
+.float
+  float: left
+
+.float-alt
+  float: right
+
 // Modules
 .elgg-module
   margin-bottom: 1rem
@@ -681,13 +708,15 @@ fieldset
     letter-spacing: .1em
   &.is-borderless
     border: none !important
+    box-shadow: none !important
   &.is-paddingless
     padding: 0 !important
 
 .elgg-module-popup
   @extend .box
   position: absolute
-  z-index: 1201 // above lightbox
+  z-index: 1201
+  // above lightbox
   max-width: 600px
 
 .elgg-menu-hover,
@@ -695,7 +724,8 @@ fieldset
   @extend .box
   padding: 0
   position: absolute
-  z-index: 1001
+  z-index: 1201
+  // above lightbox
   width: 12rem
   overflow: hidden
   &.is-loading
@@ -771,6 +801,9 @@ fieldset
 
 .elgg-widgets
   min-height: 2em
+
+.elgg-layout-widgets-controls
+  margin-bottom: 1.5em
 
 .elgg-widget-add-control
   text-align: right

@@ -123,6 +123,7 @@ echo elgg_view('elements/helpers.css', $vars);
     top: 0;
     flex-direction: row;
     margin: 2px;
+    display: none;
 }
 .elgg-plugin:hover .elgg-plugin-list-reordering {
 	display: block;

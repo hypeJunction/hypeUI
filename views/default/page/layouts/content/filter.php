@@ -7,6 +7,11 @@ if (isset($vars['filter_override'])) {
 	$vars['filter'] = $vars['filter_override'];
 }
 
+$filter = elgg_extract('filter', $vars);
+if ($filter === false) {
+	return;
+}
+
 // register the default content filters
 if (!isset($vars['filter']) && elgg_is_logged_in() && $context && !elgg_get_page_owner_entity()) {
 	$username = elgg_get_logged_in_user_entity()->username;

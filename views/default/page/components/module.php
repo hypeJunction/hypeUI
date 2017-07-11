@@ -20,7 +20,7 @@ $show_inner = elgg_extract('show_inner', $vars, false);
 
 $attrs = [
 	'id' => elgg_extract('id', $vars),
-	'class' => elgg_extract_class($vars, ['elgg-module']),
+	'class' => elgg_extract_class($vars, ['elgg-module', 'clearfix']),
 ];
 
 if ($type) {

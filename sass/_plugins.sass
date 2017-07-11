@@ -1,3 +1,8 @@
+$input: $grey-darker !default
+$input-background: $white !default
+$input-border: $grey-lighter !default
+$input-radius: $radius !default
+
 .messages-buttonbank
   margin-top: 1em
 
@@ -18,9 +23,11 @@
 .elgg-listing-summary
   .scraper-card-video
     min-width: 200px
+  .elgg-module-widget & .scraper-card-video
+    width: 100%
 
 .elgg-module.elgg-module-scraper-card
-  background: #eee
+  background: $white-ter
   border-radius: 3px
   box-shadow: none
 
@@ -45,3 +52,24 @@
 
 .interactions-component .message
   margin: 1em auto
+
+.elgg-form
+  ul.tagit
+    border-color: $input-border
+    border-radius: $input-radius
+  ul.tagit li.tagit-choice
+    border-color: $grey-dark
+    background: $white-ter
+    color: $black
+    &:hover
+      background: $grey
+      background: $white-ter
+  .elgg-input-dropzone
+    border-color: $input-border
+    border-radius: $input-radius
+  .elgg-dropzone-instructions .icon .elgg-icon-cloud-upload
+    font-size: 40px !important
+    color: $grey-light
+  .elgg-dropzone-instructions strong,
+  .elgg-dropzone-instructions span
+    color: $grey-light

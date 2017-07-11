@@ -596,6 +596,10 @@ class Menus {
 
 		$remove = ['activity:owner'];
 
+		if (!elgg_is_admin_logged_in()) {
+			$remove[] = 'logbrowser';
+		}
+
 		foreach ($return as $key => $item) {
 			if (in_array($item->getName(), $remove)) {
 				unset($return[$key]);

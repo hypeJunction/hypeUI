@@ -30,5 +30,9 @@ if (empty($responses) && $responses !== false) {
 $vars['media'] = false;
 $vars['class'] = elgg_extract_class($vars, ['elgg-listing-full', 'elgg-content', 'clearfix', 'box']);
 
+if (isset($vars['summary'])) {
+	unset($vars['icon']);
+}
+
 echo elgg_view('object/elements/summary', $vars);
 
