@@ -1,3 +1,13 @@
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/hypeJunction/hypeUI/compare/1.3.0...v1.3.1) (2017-07-11)
+
+
+### Bug Fixes
+
+* **css:** fix mobile views ([a82d0c3](https://github.com/hypeJunction/hypeUI/commit/a82d0c3))
+
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/hypeJunction/hypeUI/compare/1.2.1...v1.3.0) (2017-07-11)
 
