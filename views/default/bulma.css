@@ -7931,18 +7931,19 @@ label.panel-block:hover {
 @media screen and (max-width: 768px) {
   .elgg-layout-columns {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .elgg-layout-main {
-    order: 10;
+    order: 1;
   }
 
   .elgg-layout-sidebar-alt {
-    order: 20;
+    order: 2;
   }
 
   .elgg-layout-sidebar {
-    order: 30;
+    order: 3;
   }
 }
 .elgg-button + .elgg-button {
@@ -7979,6 +7980,7 @@ label.panel-block:hover {
 
 .elgg-listing-summary-content {
   margin-top: 1em;
+  word-break: break-word;
 }
 .elgg-listing-summary-content .elgg-listing-media-right {
   float: right;
@@ -8854,6 +8856,7 @@ fieldset {
 
 #login-box {
   width: 30em;
+  max-width: 100%;
   padding: 2em;
 }
 

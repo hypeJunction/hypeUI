@@ -47,12 +47,13 @@
 +mobile
   .elgg-layout-columns
     display: flex
+    flex-wrap: wrap
   .elgg-layout-main
-    order: 10
+    order: 1
   .elgg-layout-sidebar-alt
-    order: 20
+    order: 2
   .elgg-layout-sidebar
-    order: 30
+    order: 3
 
 .elgg-col-1of1
   @extend .column
@@ -150,6 +151,7 @@
 
 .elgg-listing-summary-content
   margin-top: 1em
+  word-break: break-word
   .elgg-listing-media-right
     float: right
     padding: 0 0 1em 1em
@@ -843,6 +845,7 @@ fieldset
 
 #login-box
   width: 30em
+  max-width: 100%
   padding: 2em
 
 // Groups
