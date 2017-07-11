@@ -1,3 +1,18 @@
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/hypeJunction/hypeUI/compare/1.2.1...v1.3.0) (2017-07-11)
+
+
+### Bug Fixes
+
+* **layout:** layout element ordering ([9a96b2f](https://github.com/hypeJunction/hypeUI/commit/9a96b2f))
+* **topbar:** use site name as default logo ([d81bdce](https://github.com/hypeJunction/hypeUI/commit/d81bdce))
+
+### Features
+
+* **ui:** another round of changes ([1d32bb3](https://github.com/hypeJunction/hypeUI/commit/1d32bb3))
+
+
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/hypeJunction/hypeUI/compare/1.2.0...v1.2.1) (2017-07-08)
 
