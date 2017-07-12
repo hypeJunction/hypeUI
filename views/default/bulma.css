@@ -7953,6 +7953,10 @@ label.panel-block:hover {
   color: #2e2e2e;
 }
 
+.hero .elgg-output {
+  color: inherit;
+}
+
 .elgg-topbar-logo a {
   color: #fff !important;
 }
@@ -8866,6 +8870,10 @@ fieldset {
   width: 100%;
   max-width: 24em;
   margin: 0 auto;
+}
+.elgg-module-hero .elgg-form-login {
+  width: 100%;
+  padding: 0;
 }
 
 .elgg-account-help-register {
