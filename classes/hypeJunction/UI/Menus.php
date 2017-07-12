@@ -849,4 +849,31 @@ class Menus {
 		return $return;
 	}
 
+	/**
+	 * Setup index menu
+	 *
+	 * @param string         $hook   "register"
+	 * @param string         $type   "menu:topbar"
+	 * @param ElggMenuItem[] $return Menu
+	 * @param array          $params Hook params
+	 *
+	 * @return ElggMenuItem[]
+	 */
+	public static function setupIndexMenu($hook, $type, $return, $params) {
+
+		if (!elgg_is_logged_in()) {
+			if (elgg_get_config('allow_registration')) {
+				$return[] = ElggMenuItem::factory([
+					'name' => 'register',
+					'href' => elgg_get_registration_url(),
+					'text' => elgg_echo('hero:register'),
+					'priority' => 900,
+					'link_class' => 'button is-dark is-large',
+				]);
+			}
+		}
+
+		return $return;
+	}
+
 }

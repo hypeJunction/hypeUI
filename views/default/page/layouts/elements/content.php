@@ -9,8 +9,8 @@ if ($content === false) {
         <?= elgg_view('page/layouts/elements/navigation', $vars) ?>
         <div class="elgg-layout-columns columns">
 			<?php
-			echo elgg_view('page/layouts/elements/sidebar_alt', $vars);
 			echo elgg_view('page/layouts/elements/main', $vars);
+			echo elgg_view('page/layouts/elements/sidebar_alt', $vars);
 			echo elgg_view('page/layouts/elements/sidebar', $vars);
 			?>
         </div>

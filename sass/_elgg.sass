@@ -25,6 +25,9 @@
   .elgg-image-block
     align-items: center
 
+.has-cover
+  position: relative
+
 .elgg-layout-cover
   display: block
   width: 100%
@@ -44,16 +47,14 @@
       .media-content
         text-align: center
 
-+mobile
-  .elgg-layout-columns
-    display: flex
-    flex-wrap: wrap
-  .elgg-layout-main
-    order: 1
-  .elgg-layout-sidebar-alt
-    order: 2
-  .elgg-layout-sidebar
-    order: 3
+.elgg-layout-sidebar-alt
+  order: 1
+
+.elgg-layout-main
+  order: 2
+
+.elgg-layout-sidebar
+  order: 3
 
 .elgg-col-1of1
   @extend .column
@@ -456,10 +457,11 @@
       padding: 0
       text-align: left
       a
-        padding: 8px 32px 8px 16px
         display: inline-block
         border-top: 1px solid rgba($white, 0.2)
         width: 100%
+        &:not(.button)
+          padding: 8px 32px 8px 16px
     .field
       margin: 8px
     .elgg-menu-parent

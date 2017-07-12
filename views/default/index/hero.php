@@ -60,6 +60,11 @@ if ($info) {
 	]);
 }
 
+$info .= elgg_view_menu('index', [
+	'class' => 'elgg-menu-hz',
+	'sort_by' => 'priority',
+]);
+
 $attrs = [
 	'class' => ['hero', 'is-fullheight', 'elgg-hero-index'],
 ];

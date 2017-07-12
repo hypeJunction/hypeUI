@@ -18,12 +18,11 @@ elgg_register_event_handler('init', 'system', function () {
 	elgg_register_css('fonts.opensans', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700');
 	elgg_load_css('fonts.opensans');
 
-	elgg_register_plugin_hook_handler('register', 'menu:topbar', [Menus::class, 'setupTopbarMenu'], 999);
-
 	elgg_unregister_plugin_hook_handler('prepare', 'menu:site', '_elgg_site_menu_setup');
 	elgg_register_plugin_hook_handler('register', 'menu:site', [Menus::class, 'setupSiteMenu']);
 	elgg_register_plugin_hook_handler('prepare', 'menu:site', [Menus::class, 'prepareSiteMenu'], 999);
 
+	elgg_register_plugin_hook_handler('register', 'menu:topbar', [Menus::class, 'setupTopbarMenu'], 999);
 	elgg_register_plugin_hook_handler('register', 'menu:entity', [Menus::class, 'setupEntityMenu'], 999);
 	elgg_register_plugin_hook_handler('register', 'menu:entity_social', [Menus::class, 'setupEntitySocialMenu'], 999);
 	elgg_register_plugin_hook_handler('register', 'menu:entity', [Menus::class, 'setupWidgetMenu'], 999);
@@ -32,6 +31,7 @@ elgg_register_event_handler('init', 'system', function () {
 	elgg_register_plugin_hook_handler('register', 'menu:extras', [Menus::class, 'setupExtrasMenu'], 999);
 	elgg_register_plugin_hook_handler('register', 'menu:title', [Menus::class, 'setupTitleMenu'], 999);
 	elgg_register_plugin_hook_handler('register', 'menu:page', [Menus::class, 'setupPageMenu'], 999);
+	elgg_register_plugin_hook_handler('register', 'menu:index', [Menus::class, 'setupIndexMenu'], 999);
 
 	elgg_extend_view('elgg.css', 'bulma.css', 1);
 	elgg_extend_view('admin.css', 'bulma.css', 1);

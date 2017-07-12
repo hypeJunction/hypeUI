@@ -50,4 +50,6 @@ return [
 	'admin:theme:layout:sidebar:after' => 'Sidebar Bottom',
 	'admin:theme:layout:footer' => 'Footer',
 
+	'hero:register' => 'Join Our Community!',
+
 ];

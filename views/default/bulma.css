@@ -7904,6 +7904,10 @@ label.panel-block:hover {
   align-items: center;
 }
 
+.has-cover {
+  position: relative;
+}
+
 .elgg-layout-cover {
   display: block;
   width: 100%;
@@ -7928,24 +7932,18 @@ label.panel-block:hover {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .elgg-layout-columns {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .elgg-layout-main {
-    order: 1;
-  }
-
-  .elgg-layout-sidebar-alt {
-    order: 2;
-  }
-
-  .elgg-layout-sidebar {
-    order: 3;
-  }
+.elgg-layout-sidebar-alt {
+  order: 1;
 }
+
+.elgg-layout-main {
+  order: 2;
+}
+
+.elgg-layout-sidebar {
+  order: 3;
+}
+
 .elgg-button + .elgg-button {
   margin-left: 0.5em;
 }
@@ -8368,10 +8366,12 @@ label.panel-block:hover {
     text-align: left;
   }
   .elgg-menu-topbar > li a {
-    padding: 8px 32px 8px 16px;
     display: inline-block;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     width: 100%;
+  }
+  .elgg-menu-topbar > li a:not(.button):not(.elgg-button) {
+    padding: 8px 32px 8px 16px;
   }
   .elgg-menu-topbar .field, .elgg-menu-topbar .elgg-field, .elgg-menu-topbar .elgg-form > fieldset > div:not(:last-child) {
     margin: 8px;
