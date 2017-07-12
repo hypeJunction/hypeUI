@@ -545,6 +545,18 @@ class Menus {
 					break;
 			}
 
+			$keys = [
+				"owner_block:{$entity->type}:{$item->getName()}",
+				"owner_block:{$item->getName()}",
+			];
+
+			foreach ($keys as $key) {
+				if (elgg_language_key_exists($key)) {
+					$item->setText(elgg_echo($key));
+					break;
+				}
+			}
+
 			if ($entity->guid == elgg_get_page_owner_guid()) {
 				$href = $item->getHref();
 				if (strpos($href, elgg_get_site_url()) == 0) {

@@ -8294,7 +8294,7 @@ label.panel-block:hover {
   flex-direction: row;
 }
 .elgg-menu-hz > li + li {
-  margin-left: 0.5em;
+  margin-left: 1rem;
 }
 
 .elgg-menu-site {
@@ -8854,10 +8854,31 @@ fieldset {
   border-radius: 2px;
 }
 
-#login-box {
-  width: 30em;
+.elgg-form-login {
+  width: 20em;
   max-width: 100%;
   padding: 2em;
+}
+.elgg-form-login .elgg-foot {
+  margin-top: 1em;
+}
+.elgg-form-login [type="submit"] {
+  width: 100%;
+  max-width: 24em;
+  margin: 0 auto;
+}
+
+.elgg-account-help-register {
+  font-size: 90%;
+  text-align: center;
+  font-weight: 500;
+  padding: 1em;
+  border-top: 1px solid whitesmoke;
+  margin-top: 1em;
+}
+
+.elgg-account-help-fortgot-password {
+  font-size: 90%;
 }
 
 .groups-tools {
@@ -9074,4 +9095,27 @@ fieldset {
 .elgg-form .elgg-dropzone-instructions strong,
 .elgg-form .elgg-dropzone-instructions span {
   color: #b5b5b5;
+}
+
+.elgg-tokeninput-token {
+  display: flex;
+  align-items: center;
+}
+
+.elgg-tokeninput-token .elgg-image {
+  margin-right: 5px;
+}
+
+ul.token-input-list li.token-input-token {
+  display: flex;
+  align-items: center;
+}
+
+ul.token-input-list .elgg-image-block.elgg-tokeninput-token {
+  width: auto;
+  flex-grow: 1;
+}
+
+.elgg-tokeninput-token .elgg-avatar-small {
+  border: none;
 }

@@ -30,12 +30,18 @@ elgg_push_breadcrumb($title);
 
 $content = elgg_view_entity($entity, array('full_view' => true));
 
-elgg_register_menu_item('title', array(
-	'name' => 'download',
-	'text' => elgg_echo('download'),
-	'href' => elgg_get_download_url($entity),
-	'link_class' => 'elgg-button elgg-button-action',
-));
+$params = [
+	'entity' => $entity,
+];
+
+if (elgg_trigger_plugin_hook('permissions_check:download', 'file', $params, true)) {
+	elgg_register_menu_item('title', [
+		'name' => 'download',
+		'text' => elgg_echo('download'),
+		'href' => elgg_get_download_url($entity),
+		'link_class' => 'elgg-button elgg-button-action',
+	]);
+}
 
 $body = elgg_view_layout('content', array(
 	'content' => $content,

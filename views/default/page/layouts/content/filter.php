@@ -43,6 +43,7 @@ if (!isset($vars['filter']) && elgg_is_logged_in() && $context && !elgg_get_page
 		$tab['name'] = $name;
 		elgg_register_menu_item('filter', $tab);
 	}
+
 }
 
 echo elgg_view_menu('filter', [

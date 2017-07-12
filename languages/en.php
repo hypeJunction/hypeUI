@@ -51,5 +51,5 @@ return [
 	'admin:theme:layout:footer' => 'Footer',
 
 	'hero:register' => 'Join Our Community!',
-
+	'core:account:help:register' => 'Not a member yet? %s',
 ];

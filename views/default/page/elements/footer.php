@@ -23,11 +23,19 @@ if ($footer === false) {
 				?>
             </div>
         </div>
+        <div class="columns is-centered is-multiline">
+			<?php
+			if ($footer) {
+				echo $footer;
+			}
+			echo elgg_view('page/elements/footer/extend', $vars);
+			?>
+        </div>
         <div class="menu columns is-centered">
 			<?php
 			echo elgg_view_menu('footer', [
 				'sort_by' => 'priority',
-				'class' => 'elgg-menu-hz column is-one-third has-text-centered',
+				'class' => 'elgg-menu-hz column is-one-third',
 				'show_section_headers' => false,
 			]);
 			?>

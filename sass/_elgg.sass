@@ -409,7 +409,7 @@
 .elgg-menu-hz
   flex-direction: row
   & > li + li
-    margin-left: 0.5em
+    margin-left: 1rem
 
 .elgg-menu-site
   justify-content: space-around
@@ -845,10 +845,27 @@ fieldset
   padding: 2em
   border-radius: $radius-small
 
-#login-box
-  width: 30em
+.elgg-form-login
+  width: 20em
   max-width: 100%
   padding: 2em
+  .elgg-foot
+    margin-top: 1em
+  [type="submit"]
+    width: 100%
+    max-width: 24em
+    margin: 0 auto
+
+.elgg-account-help-register
+  font-size: 90%
+  text-align: center
+  font-weight: 500
+  padding: 1em
+  border-top: 1px solid $white-ter
+  margin-top: 1em
+
+.elgg-account-help-fortgot-password
+  font-size: 90%
 
 // Groups
 .groups-tools
