@@ -12,6 +12,8 @@ if ($filter === false) {
 	return;
 }
 
+$items = [];
+
 // register the default content filters
 if (!isset($vars['filter']) && elgg_is_logged_in() && $context && !elgg_get_page_owner_entity()) {
 	$username = elgg_get_logged_in_user_entity()->username;
@@ -41,12 +43,21 @@ if (!isset($vars['filter']) && elgg_is_logged_in() && $context && !elgg_get_page
 
 	foreach ($tabs as $name => $tab) {
 		$tab['name'] = $name;
-		elgg_register_menu_item('filter', $tab);
+		$items[] = $tab;
 	}
 
 }
 
+if (!empty($vars['filter'])) {
+	if (is_string($vars['filter'])) {
+		echo $vars['filter'];
+	} else if (is_array($vars['filter'])) {
+		$items += $vars['filter'];
+	}
+}
+
 echo elgg_view_menu('filter', [
+	'items' => $items,
 	'sort_by' => 'priority',
 	'class' => 'elgg-menu-hz',
 ]);
