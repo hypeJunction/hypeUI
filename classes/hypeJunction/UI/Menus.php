@@ -449,10 +449,11 @@ class Menus {
 		if ($entity instanceof ElggGroup) {
 			$count = $entity->getMembers(['count' => true]);
 			if ($count) {
+				$identifier = is_callable('group_subtypes_get_identifier') ? group_subtypes_get_identifier($entity) : 'groups';
 				$return[] = ElggMenuItem::factory([
 					'name' => 'members',
 					'text' => "$count",
-					'href' => "groups/members/$entity->guid",
+					'href' => "$identifier/members/$entity->guid",
 					'title' => $count . ' ' . elgg_echo('groups:member'),
 					'icon' => 'users',
 				]);
@@ -522,10 +523,11 @@ class Menus {
 
 		if ($entity instanceof ElggGroup) {
 			if (elgg_group_gatekeeper(false, $entity->guid)) {
+				$identifier = is_callable('group_subtypes_get_identifier') ? group_subtypes_get_identifier($entity) : 'groups';
 				$return[] = ElggMenuItem::factory([
 					'name' => 'members',
 					'text' => elgg_echo('groups:members'),
-					'href' => "groups/members/$entity->guid",
+					'href' => "$identifier/members/$entity->guid",
 					'priority' => 20,
 				]);
 			}
