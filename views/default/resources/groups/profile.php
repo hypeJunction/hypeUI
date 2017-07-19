@@ -21,14 +21,15 @@ elgg_push_breadcrumb($title);
 $vars = $vars;
 $vars['entity'] = $entity;
 
-$subtype = $entity->getSubtype();
+$subtype = $entity->getSubtype() ? : 'default';
 if (elgg_view_exists("profiles/group/$subtype")) {
 	$content = elgg_view("profiles/group/$subtype", $vars);
 } else {
 	$content = elgg_view('profiles/group/default', $vars);
 }
+
 $filter = elgg_view('filters/groups/profile', $vars);
-$sidebar = elgg_view('sidebars/groups/profile', $vars);
+$sidebar = elgg_view('groups/sidebar', $vars);
 
 $layout_vars = array(
 	'title' => $title,
