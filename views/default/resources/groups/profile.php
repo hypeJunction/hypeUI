@@ -1,28 +1,46 @@
 <?php
 
 $guid = elgg_extract('guid', $vars);
-
-elgg_register_rss_link();
-
 elgg_entity_gatekeeper($guid, 'group');
 
 $entity = get_entity($guid);
+elgg_set_page_owner_guid($guid);
 
-elgg_push_breadcrumb($entity->getDisplayName());
+$identifier = is_callable('group_subtypes_get_identifier') ? group_subtypes_get_identifier($entity) : 'groups';
+
+// pushing context to make it easier to user 'menu:filter' hook
+elgg_push_context("$identifier/profile");
 
 groups_register_profile_buttons($entity);
 
-$content = elgg_view('groups/profile/layout', array('entity' => $entity));
-$sidebar = elgg_view('groups/sidebar', ['entity' => $entity]);
+$title = $entity->getDisplayName();
 
-$params = array(
+elgg_push_breadcrumb(elgg_echo($identifier), "$identifier/all");
+elgg_push_breadcrumb($title);
+
+$vars = $vars;
+$vars['entity'] = $entity;
+
+$subtype = $entity->getSubtype();
+if (elgg_view_exists("profiles/group/$subtype")) {
+	$content = elgg_view("profiles/group/$subtype", $vars);
+} else {
+	$content = elgg_view('profiles/group/default', $vars);
+}
+$filter = elgg_view('filters/groups/profile', $vars);
+$sidebar = elgg_view('sidebars/groups/profile', $vars);
+
+$layout_vars = array(
+	'title' => $title,
 	'content' => $content,
-	'sidebar' => $sidebar,
-	'title' => $entity->getDisplayName(),
-	'entity' => $entity,
+	'filter' => $filter ? : '',
+	'sidebar' => $sidebar ? : null,
+	'layout_name' => 'content',
 );
-$body = elgg_view_layout('one_sidebar', $params);
 
-echo elgg_view_page($entity->getDisplayName(), $body, 'default', [
-	'entity' => $entity,
-]);
+$layout_vars = elgg_trigger_plugin_hook('layout_vars', 'groups_profile', $vars, $layout_vars);
+$layout_name = elgg_extract('layout_name', $layout_vars, 'content');
+unset($layout_vars['layout_name']);
+
+$layout = elgg_view_layout($layout_name, $layout_vars);
+echo elgg_view_page($title, $layout);
