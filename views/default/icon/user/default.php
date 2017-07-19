@@ -33,14 +33,17 @@ if (!array_key_exists($size, $icon_sizes)) {
 
 $name = htmlspecialchars($user->name, ENT_QUOTES, 'UTF-8', false);
 
-$class = "elgg-avatar elgg-avatar-$size";
-if (isset($vars['class'])) {
-	$class = "$class {$vars['class']}";
-}
+$class = elgg_extract_class($vars, ["elgg-avatar", "elgg-avatar-$size"]);
+
 if ($user->isBanned()) {
-	$class .= ' elgg-state-banned';
+	$class[] = 'elgg-state-banned';
 	$banned_text = elgg_echo('banned');
 	$name .= " ($banned_text)";
+}
+
+$tooltip = elgg_extract('tooltip', $vars, true);
+if ($tooltip) {
+	$class[] = 'elgg-tooltip';
 }
 
 $use_link = elgg_extract('use_link', $vars, true);
@@ -72,4 +75,5 @@ if ($use_link) {
 
 echo elgg_format_element('div', [
 	'class' => $class,
+	'title' => $name,
 ], $link);
