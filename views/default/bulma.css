@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*! bulma.io v0.4.2 | MIT License | github.com/jgthms/bulma */
+/*! bulma.io v0.4.4 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
     transform: rotate(0deg);
@@ -132,7 +132,6 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  overflow-x: hidden;
 }
 
 a {
@@ -162,6 +161,7 @@ hr {
 }
 
 img {
+  height: auto;
   max-width: 100%;
 }
 
@@ -222,43 +222,36 @@ table th {
     display: block !important;
   }
 }
-
 @media screen and (min-width: 769px), print {
   .is-block-tablet {
     display: block !important;
   }
 }
-
-@media screen and (min-width: 769px) and (max-width: 999px) {
+@media screen and (min-width: 769px) and (max-width: 1007px) {
   .is-block-tablet-only {
     display: block !important;
   }
 }
-
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1007px) {
   .is-block-touch {
     display: block !important;
   }
 }
-
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1008px) {
   .is-block-desktop {
     display: block !important;
   }
 }
-
-@media screen and (min-width: 1000px) and (max-width: 1191px) {
+@media screen and (min-width: 1008px) and (max-width: 1199px) {
   .is-block-desktop-only {
     display: block !important;
   }
 }
-
-@media screen and (min-width: 1192px) {
+@media screen and (min-width: 1200px) {
   .is-block-widescreen {
     display: block !important;
   }
 }
-
 .is-flex {
   display: flex;
 }
@@ -268,43 +261,36 @@ table th {
     display: flex !important;
   }
 }
-
 @media screen and (min-width: 769px), print {
   .is-flex-tablet {
     display: flex !important;
   }
 }
-
-@media screen and (min-width: 769px) and (max-width: 999px) {
+@media screen and (min-width: 769px) and (max-width: 1007px) {
   .is-flex-tablet-only {
     display: flex !important;
   }
 }
-
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1007px) {
   .is-flex-touch {
     display: flex !important;
   }
 }
-
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1008px) {
   .is-flex-desktop {
     display: flex !important;
   }
 }
-
-@media screen and (min-width: 1000px) and (max-width: 1191px) {
+@media screen and (min-width: 1008px) and (max-width: 1199px) {
   .is-flex-desktop-only {
     display: flex !important;
   }
 }
-
-@media screen and (min-width: 1192px) {
+@media screen and (min-width: 1200px) {
   .is-flex-widescreen {
     display: flex !important;
   }
 }
-
 .is-inline {
   display: inline;
 }
@@ -314,43 +300,36 @@ table th {
     display: inline !important;
   }
 }
-
 @media screen and (min-width: 769px), print {
   .is-inline-tablet {
     display: inline !important;
   }
 }
-
-@media screen and (min-width: 769px) and (max-width: 999px) {
+@media screen and (min-width: 769px) and (max-width: 1007px) {
   .is-inline-tablet-only {
     display: inline !important;
   }
 }
-
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1007px) {
   .is-inline-touch {
     display: inline !important;
   }
 }
-
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1008px) {
   .is-inline-desktop {
     display: inline !important;
   }
 }
-
-@media screen and (min-width: 1000px) and (max-width: 1191px) {
+@media screen and (min-width: 1008px) and (max-width: 1199px) {
   .is-inline-desktop-only {
     display: inline !important;
   }
 }
-
-@media screen and (min-width: 1192px) {
+@media screen and (min-width: 1200px) {
   .is-inline-widescreen {
     display: inline !important;
   }
 }
-
 .is-inline-block {
   display: inline-block;
 }
@@ -360,43 +339,36 @@ table th {
     display: inline-block !important;
   }
 }
-
 @media screen and (min-width: 769px), print {
   .is-inline-block-tablet {
     display: inline-block !important;
   }
 }
-
-@media screen and (min-width: 769px) and (max-width: 999px) {
+@media screen and (min-width: 769px) and (max-width: 1007px) {
   .is-inline-block-tablet-only {
     display: inline-block !important;
   }
 }
-
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1007px) {
   .is-inline-block-touch {
     display: inline-block !important;
   }
 }
-
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1008px) {
   .is-inline-block-desktop {
     display: inline-block !important;
   }
 }
-
-@media screen and (min-width: 1000px) and (max-width: 1191px) {
+@media screen and (min-width: 1008px) and (max-width: 1199px) {
   .is-inline-block-desktop-only {
     display: inline-block !important;
   }
 }
-
-@media screen and (min-width: 1192px) {
+@media screen and (min-width: 1200px) {
   .is-inline-block-widescreen {
     display: inline-block !important;
   }
 }
-
 .is-inline-flex {
   display: inline-flex;
 }
@@ -406,43 +378,36 @@ table th {
     display: inline-flex !important;
   }
 }
-
 @media screen and (min-width: 769px), print {
   .is-inline-flex-tablet {
     display: inline-flex !important;
   }
 }
-
-@media screen and (min-width: 769px) and (max-width: 999px) {
+@media screen and (min-width: 769px) and (max-width: 1007px) {
   .is-inline-flex-tablet-only {
     display: inline-flex !important;
   }
 }
-
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1007px) {
   .is-inline-flex-touch {
     display: inline-flex !important;
   }
 }
-
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1008px) {
   .is-inline-flex-desktop {
     display: inline-flex !important;
   }
 }
-
-@media screen and (min-width: 1000px) and (max-width: 1191px) {
+@media screen and (min-width: 1008px) and (max-width: 1199px) {
   .is-inline-flex-desktop-only {
     display: inline-flex !important;
   }
 }
-
-@media screen and (min-width: 1192px) {
+@media screen and (min-width: 1200px) {
   .is-inline-flex-widescreen {
     display: inline-flex !important;
   }
 }
-
 .is-clearfix:after, .clearfix:after {
   clear: both;
   content: " ";
@@ -450,11 +415,11 @@ table th {
 }
 
 .is-pulled-left {
-  float: left;
+  float: left !important;
 }
 
 .is-pulled-right {
-  float: right;
+  float: right !important;
 }
 
 .is-clipped {
@@ -469,16 +434,220 @@ table th {
   top: 0;
 }
 
+.is-size-1 {
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .is-size-1-mobile {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 769px), print {
+  .is-size-1-tablet {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 1007px) {
+  .is-size-1-touch {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 1008px) {
+  .is-size-1-desktop {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .is-size-1-widescreen {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 1392px) {
+  .is-size-1-fullhd {
+    font-size: 3rem;
+  }
+}
+.is-size-2 {
+  font-size: 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .is-size-2-mobile {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 769px), print {
+  .is-size-2-tablet {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 1007px) {
+  .is-size-2-touch {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 1008px) {
+  .is-size-2-desktop {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .is-size-2-widescreen {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 1392px) {
+  .is-size-2-fullhd {
+    font-size: 2.5rem;
+  }
+}
+.is-size-3 {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .is-size-3-mobile {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 769px), print {
+  .is-size-3-tablet {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 1007px) {
+  .is-size-3-touch {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1008px) {
+  .is-size-3-desktop {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .is-size-3-widescreen {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1392px) {
+  .is-size-3-fullhd {
+    font-size: 2rem;
+  }
+}
+.is-size-4 {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .is-size-4-mobile {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 769px), print {
+  .is-size-4-tablet {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 1007px) {
+  .is-size-4-touch {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1008px) {
+  .is-size-4-desktop {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .is-size-4-widescreen {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1392px) {
+  .is-size-4-fullhd {
+    font-size: 1.5rem;
+  }
+}
+.is-size-5 {
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 768px) {
+  .is-size-5-mobile {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (min-width: 769px), print {
+  .is-size-5-tablet {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (max-width: 1007px) {
+  .is-size-5-touch {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (min-width: 1008px) {
+  .is-size-5-desktop {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .is-size-5-widescreen {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (min-width: 1392px) {
+  .is-size-5-fullhd {
+    font-size: 1.25rem;
+  }
+}
+.is-size-6 {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .is-size-6-mobile {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 769px), print {
+  .is-size-6-tablet {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 1007px) {
+  .is-size-6-touch {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1008px) {
+  .is-size-6-desktop {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .is-size-6-widescreen {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1392px) {
+  .is-size-6-fullhd {
+    font-size: 1rem;
+  }
+}
 .has-text-centered {
-  text-align: center;
+  text-align: center !important;
 }
 
 .has-text-left {
-  text-align: left;
+  text-align: left !important;
 }
 
 .has-text-right {
-  text-align: right;
+  text-align: right !important;
 }
 
 .has-text-white {
@@ -562,43 +731,36 @@ a.has-text-danger:hover, a.has-text-danger:focus {
     display: none !important;
   }
 }
-
 @media screen and (min-width: 769px), print {
   .is-hidden-tablet {
     display: none !important;
   }
 }
-
-@media screen and (min-width: 769px) and (max-width: 999px) {
+@media screen and (min-width: 769px) and (max-width: 1007px) {
   .is-hidden-tablet-only {
     display: none !important;
   }
 }
-
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1007px) {
   .is-hidden-touch {
     display: none !important;
   }
 }
-
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1008px) {
   .is-hidden-desktop {
     display: none !important;
   }
 }
-
-@media screen and (min-width: 1000px) and (max-width: 1191px) {
+@media screen and (min-width: 1008px) and (max-width: 1199px) {
   .is-hidden-desktop-only {
     display: none !important;
   }
 }
-
-@media screen and (min-width: 1192px) {
+@media screen and (min-width: 1200px) {
   .is-hidden-widescreen {
     display: none !important;
   }
 }
-
 .is-marginless {
   margin: 0 !important;
 }
@@ -620,6 +782,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 2px 3px rgba(33, 33, 33, 0.1), 0 0 0 1px rgba(33, 33, 33, 0.1);
+  color: #4a4a4a;
   display: block;
   padding: 1.25rem;
 }
@@ -1465,9 +1628,6 @@ input[type="submit"].elgg-button {
   padding-top: 0.35em;
 }
 
-.content, .elgg-output {
-  color: #4a4a4a;
-}
 .content:not(:last-child), .elgg-output:not(:last-child) {
   margin-bottom: 1.5rem;
 }
@@ -2359,12 +2519,19 @@ input[type="submit"].elgg-button {
 .textarea, .elgg-input-plaintext,
 .elgg-input-longtext {
   display: block;
-  max-height: 600px;
   max-width: 100%;
-  min-height: 120px;
   min-width: 100%;
   padding: 0.625em;
   resize: vertical;
+}
+.textarea:not([rows]), .elgg-input-plaintext:not([rows]),
+.elgg-input-longtext:not([rows]) {
+  max-height: 600px;
+  min-height: 120px;
+}
+.textarea[rows], [rows].elgg-input-plaintext,
+[rows].elgg-input-longtext {
+  height: unset;
 }
 
 .checkbox, .elgg-input-single-checkbox,
@@ -2395,12 +2562,14 @@ input[type="submit"].elgg-button {
 
 .select {
   display: inline-block;
-  height: 2.25em;
   max-width: 100%;
   position: relative;
   vertical-align: top;
 }
-.select:after {
+.select:not(.is-multiple) {
+  height: 2.25em;
+}
+.select:not(.is-multiple)::after {
   border: 1px solid #0398e2;
   border-right: 0;
   border-top: 0;
@@ -2442,7 +2611,6 @@ input[type="submit"].elgg-button {
   font-size: 1em;
   max-width: 100%;
   outline: none;
-  padding-right: 2.5em;
 }
 .select select:focus, .select select.is-focused, .select select:active, .select select.is-active, .select .elgg-tabs select.elgg-state-selected, .elgg-tabs .select select.elgg-state-selected {
   outline: none;
@@ -2477,13 +2645,26 @@ input[type="submit"].elgg-button {
 .select select:hover {
   border-color: #b5b5b5;
 }
+.select select:focus, .select select.is-focused, .select select:active, .select select.is-active, .select .elgg-tabs select.elgg-state-selected, .elgg-tabs .select select.elgg-state-selected {
+  border-color: #0398e2;
+}
 .select select::-ms-expand {
   display: none;
 }
 .select select[disabled]:hover, .select select.elgg-state-disabled:hover {
   border-color: whitesmoke;
 }
-.select:hover:after {
+.select select:not([multiple]) {
+  padding-right: 2.5em;
+}
+.select select[multiple] {
+  height: unset;
+  padding: 0;
+}
+.select select[multiple] option {
+  padding: 0.5em 1em;
+}
+.select:hover::after {
   border-color: #363636;
 }
 .select.is-white select {
@@ -2523,7 +2704,7 @@ input[type="submit"].elgg-button {
 .select.is-large {
   font-size: 1.5rem;
 }
-.select.is-disabled:after {
+.select.is-disabled::after {
   border-color: #7a7a7a;
 }
 .select.is-fullwidth {
@@ -2532,7 +2713,7 @@ input[type="submit"].elgg-button {
 .select.is-fullwidth select {
   width: 100%;
 }
-.select.is-loading:after {
+.select.is-loading::after {
   animation: spinAround 500ms infinite linear;
   border: 2px solid #dbdbdb;
   border-radius: 290486px;
@@ -2618,7 +2799,7 @@ input[type="submit"].elgg-button {
   display: flex;
   justify-content: flex-start;
 }
-.field.has-addons .control, .has-addons.elgg-field .control, .elgg-form > fieldset > div.has-addons:not(:last-child) .control {
+.field.has-addons .control:not(:last-child), .has-addons.elgg-field .control:not(:last-child), .elgg-form > fieldset > div.has-addons:not(:last-child) .control:not(:last-child) {
   margin-right: -1px;
 }
 .field.has-addons .control:first-child .button, .has-addons.elgg-field .control:first-child .button, .elgg-form > fieldset > div.has-addons:not(:last-child) .control:first-child .button, .field.has-addons .control:first-child .elgg-button, .has-addons.elgg-field .control:first-child .elgg-button, .elgg-form > fieldset > div.has-addons:not(:last-child) .control:first-child .elgg-button,
@@ -3377,6 +3558,9 @@ input[type="submit"].elgg-button {
   }
 }
 
+.field-body .field .field, .field-body .elgg-field .field, .field-body .elgg-form > fieldset > div:not(:last-child) .field, .field-body .field .elgg-field, .field-body .elgg-field .elgg-field, .field-body .elgg-form > fieldset > div:not(:last-child) .elgg-field, .field-body .field .elgg-form > fieldset > div:not(:last-child), .field-body .elgg-field .elgg-form > fieldset > div:not(:last-child), .field-body .elgg-form > fieldset > div:not(:last-child) .elgg-form > fieldset > div:not(:last-child) {
+  margin-bottom: 0;
+}
 @media screen and (min-width: 769px), print {
   .field-body {
     display: flex;
@@ -3385,13 +3569,15 @@ input[type="submit"].elgg-button {
     flex-shrink: 1;
   }
   .field-body .field, .field-body .elgg-field, .field-body .elgg-form > fieldset > div:not(:last-child) {
+    margin-bottom: 0;
+  }
+  .field-body > .field, .field-body > .elgg-field, .elgg-form > fieldset.field-body > div:not(:last-child) {
     flex-shrink: 1;
   }
-  .field-body .field:not(.is-narrow), .field-body .elgg-field:not(.is-narrow), .field-body .elgg-form > fieldset > div:not(.is-narrow):not(:last-child) {
+  .field-body > .field:not(.is-narrow), .field-body > .elgg-field:not(.is-narrow), .elgg-form > fieldset.field-body > div:not(.is-narrow):not(:last-child) {
     flex-grow: 1;
   }
-  .field-body .field:not(:last-child), .field-body .elgg-field:not(:last-child), .field-body .elgg-form > fieldset > div:not(:last-child) {
-    margin-bottom: 0;
+  .field-body > .field:not(:last-child), .field-body > .elgg-field:not(:last-child), .elgg-form > fieldset.field-body > div:not(:last-child) {
     margin-right: 0.75rem;
   }
 }
@@ -3515,7 +3701,7 @@ input[type="submit"].elgg-button {
 .control.has-icons-left .elgg-input-user-picker:focus ~ .icon,
 .control.has-icons-left .elgg-input-number:focus ~ .icon,
 .control.has-icons-left .elgg-input-location:focus ~ .icon,
-.control.has-icons-left .select select:focus ~ .icon, .control.has-icons-right .input:focus ~ .icon, .control.has-icons-right .elgg-input-text:focus ~ .icon,
+.control.has-icons-left .select:focus ~ .icon, .control.has-icons-right .input:focus ~ .icon, .control.has-icons-right .elgg-input-text:focus ~ .icon,
 .control.has-icons-right .elgg-input-date:focus ~ .icon,
 .control.has-icons-right .elgg-input-email:focus ~ .icon,
 .control.has-icons-right .elgg-input-password:focus ~ .icon,
@@ -3526,7 +3712,7 @@ input[type="submit"].elgg-button {
 .control.has-icons-right .elgg-input-user-picker:focus ~ .icon,
 .control.has-icons-right .elgg-input-number:focus ~ .icon,
 .control.has-icons-right .elgg-input-location:focus ~ .icon,
-.control.has-icons-right .select select:focus ~ .icon {
+.control.has-icons-right .select:focus ~ .icon {
   color: #7a7a7a;
 }
 .control.has-icons-left .input.is-small ~ .icon, .control.has-icons-left .input.elgg-subtext ~ .icon, .control.has-icons-left .elgg-subtext.elgg-input-text ~ .icon,
@@ -3550,8 +3736,8 @@ input[type="submit"].elgg-button {
 .control.has-icons-left .is-small.elgg-input-user-picker ~ .icon,
 .control.has-icons-left .is-small.elgg-input-number ~ .icon,
 .control.has-icons-left .is-small.elgg-input-location ~ .icon,
-.control.has-icons-left .select select.is-small ~ .icon,
-.control.has-icons-left .select select.elgg-subtext ~ .icon, .control.has-icons-right .input.is-small ~ .icon, .control.has-icons-right .input.elgg-subtext ~ .icon, .control.has-icons-right .elgg-subtext.elgg-input-text ~ .icon,
+.control.has-icons-left .select.is-small ~ .icon,
+.control.has-icons-left .select.elgg-subtext ~ .icon, .control.has-icons-right .input.is-small ~ .icon, .control.has-icons-right .input.elgg-subtext ~ .icon, .control.has-icons-right .elgg-subtext.elgg-input-text ~ .icon,
 .control.has-icons-right .elgg-subtext.elgg-input-date ~ .icon,
 .control.has-icons-right .elgg-subtext.elgg-input-email ~ .icon,
 .control.has-icons-right .elgg-subtext.elgg-input-password ~ .icon,
@@ -3572,8 +3758,8 @@ input[type="submit"].elgg-button {
 .control.has-icons-right .is-small.elgg-input-user-picker ~ .icon,
 .control.has-icons-right .is-small.elgg-input-number ~ .icon,
 .control.has-icons-right .is-small.elgg-input-location ~ .icon,
-.control.has-icons-right .select select.is-small ~ .icon,
-.control.has-icons-right .select select.elgg-subtext ~ .icon {
+.control.has-icons-right .select.is-small ~ .icon,
+.control.has-icons-right .select.elgg-subtext ~ .icon {
   font-size: 0.75rem;
 }
 .control.has-icons-left .input.is-medium ~ .icon, .control.has-icons-left .is-medium.elgg-input-text ~ .icon,
@@ -3587,7 +3773,7 @@ input[type="submit"].elgg-button {
 .control.has-icons-left .is-medium.elgg-input-user-picker ~ .icon,
 .control.has-icons-left .is-medium.elgg-input-number ~ .icon,
 .control.has-icons-left .is-medium.elgg-input-location ~ .icon,
-.control.has-icons-left .select select.is-medium ~ .icon, .control.has-icons-right .input.is-medium ~ .icon, .control.has-icons-right .is-medium.elgg-input-text ~ .icon,
+.control.has-icons-left .select.is-medium ~ .icon, .control.has-icons-right .input.is-medium ~ .icon, .control.has-icons-right .is-medium.elgg-input-text ~ .icon,
 .control.has-icons-right .is-medium.elgg-input-date ~ .icon,
 .control.has-icons-right .is-medium.elgg-input-email ~ .icon,
 .control.has-icons-right .is-medium.elgg-input-password ~ .icon,
@@ -3598,7 +3784,7 @@ input[type="submit"].elgg-button {
 .control.has-icons-right .is-medium.elgg-input-user-picker ~ .icon,
 .control.has-icons-right .is-medium.elgg-input-number ~ .icon,
 .control.has-icons-right .is-medium.elgg-input-location ~ .icon,
-.control.has-icons-right .select select.is-medium ~ .icon {
+.control.has-icons-right .select.is-medium ~ .icon {
   font-size: 1.25rem;
 }
 .control.has-icons-left .input.is-large ~ .icon, .control.has-icons-left .is-large.elgg-input-text ~ .icon,
@@ -3612,7 +3798,7 @@ input[type="submit"].elgg-button {
 .control.has-icons-left .is-large.elgg-input-user-picker ~ .icon,
 .control.has-icons-left .is-large.elgg-input-number ~ .icon,
 .control.has-icons-left .is-large.elgg-input-location ~ .icon,
-.control.has-icons-left .select select.is-large ~ .icon, .control.has-icons-right .input.is-large ~ .icon, .control.has-icons-right .is-large.elgg-input-text ~ .icon,
+.control.has-icons-left .select.is-large ~ .icon, .control.has-icons-right .input.is-large ~ .icon, .control.has-icons-right .is-large.elgg-input-text ~ .icon,
 .control.has-icons-right .is-large.elgg-input-date ~ .icon,
 .control.has-icons-right .is-large.elgg-input-email ~ .icon,
 .control.has-icons-right .is-large.elgg-input-password ~ .icon,
@@ -3623,7 +3809,7 @@ input[type="submit"].elgg-button {
 .control.has-icons-right .is-large.elgg-input-user-picker ~ .icon,
 .control.has-icons-right .is-large.elgg-input-number ~ .icon,
 .control.has-icons-right .is-large.elgg-input-location ~ .icon,
-.control.has-icons-right .select select.is-large ~ .icon {
+.control.has-icons-right .select.is-large ~ .icon {
   font-size: 1.5rem;
 }
 .control.has-icons-left .icon, .control.has-icons-right .icon {
@@ -3669,7 +3855,7 @@ input[type="submit"].elgg-button {
 .control.has-icons-right .icon.is-right {
   right: 0;
 }
-.control.is-loading:after {
+.control.is-loading::after {
   animation: spinAround 500ms infinite linear;
   border: 2px solid #dbdbdb;
   border-radius: 290486px;
@@ -3801,6 +3987,9 @@ input[type="submit"].elgg-button {
   color: currentColor;
   text-decoration: underline;
 }
+.notification strong, .elgg-message strong {
+  color: currentColor;
+}
 .notification code, .elgg-message code,
 .notification pre,
 .elgg-message pre {
@@ -3821,7 +4010,7 @@ input[type="submit"].elgg-button {
 .elgg-message .content,
 .notification .elgg-output,
 .elgg-message .elgg-output {
-  color: inherit;
+  color: currentColor;
 }
 .notification.is-white, .is-white.elgg-message {
   background-color: white;
@@ -4210,27 +4399,40 @@ input[type="submit"].elgg-button {
 }
 
 .container {
+  margin: 0 auto;
   position: relative;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1008px) {
   .container {
-    margin: 0 auto;
     max-width: 960px;
     width: 960px;
   }
   .container.is-fluid {
-    margin: 0 20px;
+    margin-left: 24px;
+    margin-right: 24px;
     max-width: none;
     width: auto;
   }
 }
-@media screen and (min-width: 1192px) {
+@media screen and (max-width: 1199px) {
+  .container.is-widescreen {
+    max-width: 1152px;
+    width: auto;
+  }
+}
+@media screen and (max-width: 1391px) {
+  .container.is-fullhd {
+    max-width: 1344px;
+    width: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
   .container {
     max-width: 1152px;
     width: 1152px;
   }
 }
-@media screen and (min-width: 1384px) {
+@media screen and (min-width: 1392px) {
   .container {
     max-width: 1344px;
     width: 1344px;
@@ -4448,6 +4650,14 @@ input[type="submit"].elgg-button {
   content: "≻";
 }
 
+.card {
+  background-color: white;
+  box-shadow: 0 2px 3px rgba(33, 33, 33, 0.1), 0 0 0 1px rgba(33, 33, 33, 0.1);
+  color: #4a4a4a;
+  max-width: 100%;
+  position: relative;
+}
+
 .card-header {
   align-items: stretch;
   box-shadow: 0 1px 2px rgba(33, 33, 33, 0.1);
@@ -4499,15 +4709,71 @@ input[type="submit"].elgg-button {
   border-right: 1px solid #dbdbdb;
 }
 
-.card {
-  background-color: white;
-  box-shadow: 0 2px 3px rgba(33, 33, 33, 0.1), 0 0 0 1px rgba(33, 33, 33, 0.1);
-  color: #4a4a4a;
-  max-width: 100%;
-  position: relative;
-}
 .card .media:not(:last-child) {
   margin-bottom: 0.75rem;
+}
+
+.dropdown {
+  display: inline-flex;
+  position: relative;
+  vertical-align: top;
+}
+.dropdown.is-active .dropdown-menu, .elgg-tabs .dropdown.elgg-state-selected .dropdown-menu, .dropdown.is-hoverable:hover .dropdown-menu {
+  display: block;
+}
+.dropdown.is-right .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+.dropdown-menu {
+  display: none;
+  left: 0;
+  max-width: 20rem;
+  min-width: 12rem;
+  padding-top: 4px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 20;
+}
+
+.dropdown-content {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(33, 33, 33, 0.1), 0 0 0 1px rgba(33, 33, 33, 0.1);
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.dropdown-item {
+  color: #4a4a4a;
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0.375rem 1rem;
+  position: relative;
+}
+
+a.dropdown-item {
+  padding-right: 3rem;
+  white-space: nowrap;
+}
+a.dropdown-item:hover {
+  background-color: whitesmoke;
+  color: #212121;
+}
+a.dropdown-item.is-active, .elgg-tabs a.dropdown-item.elgg-state-selected {
+  background-color: #0398e2;
+  color: #fff;
+}
+
+.dropdown-divider {
+  background-color: #dbdbdb;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: 0.5rem 0;
 }
 
 .level-item {
@@ -4821,11 +5087,11 @@ input[type="submit"].elgg-button {
   padding: 0.5em 0.75em;
   position: relative;
 }
-.message-header a,
+.message-header a:not(.button):not(.elgg-button),
 .message-header strong {
-  color: inherit;
+  color: currentColor;
 }
-.message-header a {
+.message-header a:not(.button):not(.elgg-button) {
   text-decoration: underline;
 }
 .message-header .delete {
@@ -4845,11 +5111,11 @@ input[type="submit"].elgg-button {
   color: #4a4a4a;
   padding: 1em 1.25em;
 }
-.message-body a,
+.message-body a:not(.button):not(.elgg-button),
 .message-body strong {
-  color: inherit;
+  color: currentColor;
 }
-.message-body a {
+.message-body a:not(.button):not(.elgg-button) {
   text-decoration: underline;
 }
 .message-body code,
@@ -5150,7 +5416,7 @@ a.nav-item:not(.button):not(.elgg-button).is-tab.is-active,
   color: #0398e2;
   padding-bottom: calc(0.75rem - 3px);
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1008px) {
   .nav-item a:not(.button):not(.elgg-button).is-brand,
   a.nav-item:not(.button):not(.elgg-button).is-brand {
     padding-left: 0;
@@ -5167,7 +5433,7 @@ a.nav-item:not(.button):not(.elgg-button).is-tab.is-active,
   max-width: 100%;
   overflow: auto;
 }
-@media screen and (min-width: 1192px) {
+@media screen and (min-width: 1200px) {
   .nav-left,
   .nav-right {
     flex-basis: 0;
@@ -5236,11 +5502,23 @@ a.nav-item:not(.button):not(.elgg-button).is-tab.is-active,
   min-height: 3.25rem;
   position: relative;
 }
+.navbar > .container {
+  align-items: stretch;
+  display: flex;
+  min-height: 3.25rem;
+  width: 100%;
+}
+.navbar.has-shadow {
+  box-shadow: 0 2px 3px rgba(33, 33, 33, 0.1);
+}
 
 .navbar-brand {
+  -webkit-overflow-scrolling: touch;
   align-items: stretch;
-  height: 3.25rem;
   display: flex;
+  min-height: 3.25rem;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .navbar-burger {
@@ -5323,6 +5601,21 @@ a.navbar-item:hover, a.navbar-item.is-active, .elgg-tabs a.navbar-item.elgg-stat
 .navbar-item.has-dropdown {
   padding: 0;
 }
+.navbar-item.is-tab {
+  border-bottom: 1px solid transparent;
+  min-height: 3.25rem;
+  padding-bottom: calc(0.5rem - 1px);
+}
+.navbar-item.is-tab:hover {
+  background-color: transparent;
+  border-bottom-color: #0398e2;
+}
+.navbar-item.is-tab.is-active, .elgg-tabs .navbar-item.is-tab.elgg-state-selected {
+  background-color: transparent;
+  border-bottom: 3px solid #0398e2;
+  color: #0398e2;
+  padding-bottom: calc(0.5rem - 3px);
+}
 
 .navbar-content {
   flex-grow: 1;
@@ -5351,7 +5644,7 @@ a.navbar-item:hover, a.navbar-item.is-active, .elgg-tabs a.navbar-item.elgg-stat
   margin: 0.5rem 0;
 }
 
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1007px) {
   .navbar-brand .navbar-item {
     align-items: center;
     display: flex;
@@ -5365,7 +5658,7 @@ a.navbar-item:hover, a.navbar-item.is-active, .elgg-tabs a.navbar-item.elgg-stat
     display: block;
   }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1008px) {
   .navbar,
   .navbar-menu,
   .navbar-start,
@@ -5375,7 +5668,7 @@ a.navbar-item:hover, a.navbar-item.is-active, .elgg-tabs a.navbar-item.elgg-stat
   }
 
   .navbar {
-    height: 3.25rem;
+    min-height: 3.25rem;
   }
   .navbar.is-transparent a.navbar-item:hover, .navbar.is-transparent a.navbar-item.is-active, .navbar.is-transparent .elgg-tabs a.navbar-item.elgg-state-selected, .elgg-tabs .navbar.is-transparent a.navbar-item.elgg-state-selected,
   .navbar.is-transparent .navbar-link:hover,
@@ -6330,7 +6623,7 @@ label.panel-block:hover {
     margin-left: 100%;
   }
 }
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1007px) {
   .column.is-narrow-touch, .is-narrow-touch.elgg-col-1of1, .is-narrow-touch.elgg-col-1of2, .is-narrow-touch.elgg-col-1of3, .is-narrow-touch.elgg-col-2of3, .is-narrow-touch.elgg-col-1of4, .is-narrow-touch.elgg-col-2of4, .is-narrow-touch.elgg-col-3of4, .elgg-cards > li.is-narrow-touch {
     flex: none;
   }
@@ -6458,7 +6751,7 @@ label.panel-block:hover {
     margin-left: 100%;
   }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1008px) {
   .column.is-narrow-desktop, .is-narrow-desktop.elgg-col-1of1, .is-narrow-desktop.elgg-col-1of2, .is-narrow-desktop.elgg-col-1of3, .is-narrow-desktop.elgg-col-2of3, .is-narrow-desktop.elgg-col-1of4, .is-narrow-desktop.elgg-col-2of4, .is-narrow-desktop.elgg-col-3of4, .elgg-cards > li.is-narrow-desktop {
     flex: none;
   }
@@ -6586,7 +6879,7 @@ label.panel-block:hover {
     margin-left: 100%;
   }
 }
-@media screen and (min-width: 1192px) {
+@media screen and (min-width: 1200px) {
   .column.is-narrow-widescreen, .is-narrow-widescreen.elgg-col-1of1, .is-narrow-widescreen.elgg-col-1of2, .is-narrow-widescreen.elgg-col-1of3, .is-narrow-widescreen.elgg-col-2of3, .is-narrow-widescreen.elgg-col-1of4, .is-narrow-widescreen.elgg-col-2of4, .is-narrow-widescreen.elgg-col-3of4, .elgg-cards > li.is-narrow-widescreen {
     flex: none;
   }
@@ -6714,7 +7007,7 @@ label.panel-block:hover {
     margin-left: 100%;
   }
 }
-@media screen and (min-width: 1384px) {
+@media screen and (min-width: 1392px) {
   .column.is-narrow-fullhd, .is-narrow-fullhd.elgg-col-1of1, .is-narrow-fullhd.elgg-col-1of2, .is-narrow-fullhd.elgg-col-1of3, .is-narrow-fullhd.elgg-col-2of3, .is-narrow-fullhd.elgg-col-1of4, .is-narrow-fullhd.elgg-col-2of4, .is-narrow-fullhd.elgg-col-3of4, .elgg-cards > li.is-narrow-fullhd {
     flex: none;
   }
@@ -6899,7 +7192,7 @@ label.panel-block:hover {
     display: flex;
   }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1008px) {
   .columns.is-desktop, .is-desktop.elgg-layout-widgets, .is-desktop.elgg-gallery, .is-desktop.elgg-cards {
     display: flex;
   }
@@ -7862,7 +8155,7 @@ label.panel-block:hover {
   background-color: white;
   padding: 3rem 1.5rem;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1008px) {
   .section.is-medium {
     padding: 9rem 1.5rem;
   }
