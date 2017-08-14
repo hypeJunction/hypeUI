@@ -8551,7 +8551,7 @@ label.panel-block:hover {
 /* Chrome, Safari, Opera */
 @keyframes comment-highlight {
   0% {
-    background: #4cae4f;
+    background: #f5fcff;
   }
   100% {
     background: white;
@@ -8991,6 +8991,9 @@ fieldset {
   z-index: 1201;
   max-width: 600px;
 }
+.elgg-module-popup .elgg-ajax-loader {
+  min-height: 10em;
+}
 
 .elgg-menu-hover,
 .elgg-object-menu-popup {
@@ -9419,4 +9422,50 @@ ul.token-input-list .elgg-image-block.elgg-tokeninput-token {
 
 .elgg-tokeninput-token .elgg-avatar-small {
   border: none;
+}
+
+.elgg-notifications-popup,
+.elgg-inbox-popup {
+  border-radius: 0 0 0.5em 0.5em;
+}
+.elgg-notifications-popup .elgg-list > li,
+.elgg-inbox-popup .elgg-list > li {
+  margin: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.notification-new,
+.inbox-message-unread {
+  background-color: #f5fcff !important;
+}
+
+.inbox-thread-participants {
+  padding: 2em !important;
+}
+
+.inbox-messages-thread-full > li {
+  box-shadow: none !important;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.elgg-list-inbox > li {
+  padding: 0 !important;
+}
+.elgg-list-inbox > li > article {
+  border-radius: 0 !important;
+}
+
+.elgg-list-inbox > li h3 {
+  font-size: 1.5em !important;
+}
+
+.elgg-item-object-messages {
+  padding: 0 !important;
+}
+
+.elgg-item-object-messages > article {
+  padding: 1.5em !important;
+  border-radius: 6px !important;
 }

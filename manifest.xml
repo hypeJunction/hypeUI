@@ -32,4 +32,10 @@
 		<priority>before</priority>
 	</suggests>
 
+	<suggests>
+		<type>priority</type>
+		<plugin>hypeInbox</plugin>
+		<priority>before</priority>
+	</suggests>
+
 </plugin_manifest>

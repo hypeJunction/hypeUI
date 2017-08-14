@@ -91,3 +91,41 @@ ul.token-input-list .elgg-image-block.elgg-tokeninput-token
 
 .elgg-tokeninput-token .elgg-avatar-small
   border: none
+
+.elgg-notifications-popup,
+.elgg-inbox-popup
+  border-radius: 0 0 0.5em 0.5em
+  .elgg-list > li
+    margin: 0 !important
+    box-shadow: none !important
+    border-radius: 0 !important
+    border-bottom: 1px solid $white-ter
+
+$color-lightning: max((100% - lightness($primary)) - 2%, 0%)
+$new-item-highlight-color: lighten($primary, $color-lightning)
+
+.notification-new,
+.inbox-message-unread
+  background-color: $new-item-highlight-color !important
+
+.inbox-thread-participants
+  padding: 2em !important
+
+.inbox-messages-thread-full > li
+  box-shadow: none !important
+  border-bottom: 1px solid $white-ter
+
+.elgg-list-inbox > li
+  padding: 0 !important
+  & > article
+    border-radius: 0 !important
+
+.elgg-list-inbox > li h3
+  font-size: 1.5em !important
+
+.elgg-item-object-messages
+  padding: 0 !important
+
+.elgg-item-object-messages > article
+  padding: 1.5em !important
+  border-radius: 6px !important

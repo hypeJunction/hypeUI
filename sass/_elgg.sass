@@ -377,10 +377,13 @@
 .elgg-river-comments .elgg-state-highlight
   animation: comment-highlight 5s
 
+$color-lightning: max((100% - lightness($primary)) - 2%, 0%)
+$comment-highlight-color: lighten($primary, $color-lightning)
+
 /* Chrome, Safari, Opera */
 @keyframes comment-highlight
   0%
-    background: $success
+    background: $comment-highlight-color
   100%
     background: $white
 
@@ -724,6 +727,8 @@ fieldset
   z-index: 1201
   // above lightbox
   max-width: 600px
+  .elgg-ajax-loader
+    min-height: 10em
 
 .elgg-menu-hover,
 .elgg-object-menu-popup
