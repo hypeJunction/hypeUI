@@ -51,7 +51,18 @@ if (!isset($byline_str)) {
 			$group_text = $container_entity->name;
 		}
 
-		$parts[] = elgg_echo('byline:ingroup', [$group_text]);
+		$subtype = $container_entity->getSubtype() ? : 'default';
+		$ingroup_keys = [
+			"byline:ingroup:$subtype",
+			"byline:ingroup",
+		];
+
+		foreach ($ingroup_keys as $key) {
+			if (elgg_language_key_exists($key)) {
+				$parts[] = elgg_echo($key, [$group_text]);
+				break;
+			}
+		}
 	}
 
 	$byline_str = implode(' ', $parts);

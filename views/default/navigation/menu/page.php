@@ -32,7 +32,7 @@ $vars['menu'] = [];
 
 $all_keys = array_keys($menus);
 if (elgg_in_context('admin')) {
-	$preferred_keys = ['actions', 'administer', 'configure', 'develop'];
+	$preferred_keys = ['actions', 'administer', 'configure', 'develop', 'default'];
 } else {
 	$preferred_keys = ['actions', 'default', 'configure', 'notifications', '1_profile', 'admin', 'danger', 'user', 'group', 'extras'];
 }

@@ -847,6 +847,11 @@ class Menus {
 				continue;
 			}
 
+			if (in_array($item->getSection(), ['A', 'B', 'C', 'D', 'E', 'F'])) {
+				// tidypics doh
+				$item->setSection('default');
+			}
+
 			switch ($item->getName()) {
 				case 'invite' :
 					$item->icon = 'user-plus';
@@ -858,6 +863,8 @@ class Menus {
 					$item->setSection('extras');
 					break;
 			}
+
+			$return[$key] = $item;
 		}
 
 		return $return;

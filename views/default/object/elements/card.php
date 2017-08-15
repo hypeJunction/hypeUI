@@ -33,7 +33,7 @@ if (empty($title) && $title !== false && $entity instanceof ElggEntity) {
 
 $subtitle = elgg_extract('subtitle', $vars);
 if (empty($subtitle) && $subtitle !== false && $entity instanceof ElggObject) {
-	$vars['subtitle'] = elgg_view('page/elements/by_line', $vars);
+	$vars['subtitle'] = elgg_view('object/elements/imprint', $vars);
 }
 
 $content = elgg_extract('content', $vars);

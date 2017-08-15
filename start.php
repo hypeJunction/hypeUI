@@ -86,6 +86,8 @@ function hypeapps_ui_get_entity_handler(ElggEntity $entity) {
 			'thewire' => 'thewire',
 			'discussion' => 'discussion',
 			'videolist_item' => 'videolist',
+			'album' => 'photos',
+			'image' => 'photos',
 		],
 		'user' => [
 			'default' => 'profile',
