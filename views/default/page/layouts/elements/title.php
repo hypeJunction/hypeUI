@@ -10,7 +10,10 @@ if (isset($header)) {
 
 $owner = elgg_get_page_owner_entity();
 if (!elgg_in_context('admin') && $owner) {
-	$icon = elgg_view_entity_icon($owner, 'medium');
+    $icon = '';
+    if ($owner instanceof ElggUser || $owner instanceof ElggGroup || $owner->hasIcon('medium')) {
+		$icon = elgg_view_entity_icon($owner, 'medium');
+	}
 	$title = elgg_format_element('div', [
 		'class' => 'elgg-heading-main title is-1',
 	], $owner->getDisplayName());
