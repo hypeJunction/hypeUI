@@ -612,6 +612,7 @@ class Menus {
 
 		if (!elgg_is_admin_logged_in()) {
 			$remove[] = 'logbrowser';
+			$remove[] = 'login_as';
 		}
 
 		foreach ($return as $key => $item) {
