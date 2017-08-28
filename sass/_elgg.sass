@@ -696,7 +696,9 @@ fieldset
   @extend .is-clearfix
 
 .hidden
-  display: none
+  display: none !important
+  &[style*="display:block"]
+    display: inherit !important
 
 .float
   float: left

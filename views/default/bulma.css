@@ -8954,7 +8954,10 @@ fieldset {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+.hidden[style*="display:block"] {
+  display: inherit !important;
 }
 
 .float {
