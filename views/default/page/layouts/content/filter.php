@@ -15,7 +15,7 @@ if ($filter === false) {
 $items = [];
 
 // register the default content filters
-if (!isset($vars['filter']) && elgg_is_logged_in() && $context && !elgg_get_page_owner_entity()) {
+if (!isset($vars['filter']) && elgg_is_logged_in() && $context) {
 	$username = elgg_get_logged_in_user_entity()->username;
 	$filter_context = elgg_extract('filter_context', $vars, 'all');
 
@@ -46,14 +46,6 @@ if (!isset($vars['filter']) && elgg_is_logged_in() && $context && !elgg_get_page
 		$items[] = $tab;
 	}
 
-}
-
-if (!empty($vars['filter'])) {
-	if (is_string($vars['filter'])) {
-		echo $vars['filter'];
-	} else if (is_array($vars['filter'])) {
-		$items += $vars['filter'];
-	}
 }
 
 echo elgg_view_menu('filter', [
