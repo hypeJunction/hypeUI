@@ -8953,10 +8953,6 @@ fieldset {
   min-width: 31px;
 }
 
-.hidden {
-  display: none;
-}
-
 .float {
   float: left;
 }
@@ -9488,4 +9484,12 @@ ul.token-input-list .elgg-image-block.elgg-tokeninput-token {
 
 .tidypics-photo-wrapper {
   text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+.hidden body *.hidden,
+.hidden body * > .hidden {
+  display: none;
 }
