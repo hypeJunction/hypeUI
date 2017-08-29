@@ -51,6 +51,7 @@ if (!isset($vars['filter']) && elgg_is_logged_in() && $context && !elgg_get_page
 if (!empty($vars['filter'])) {
 	if (is_string($vars['filter'])) {
 		echo $vars['filter'];
+		return false;
 	} else if (is_array($vars['filter'])) {
 		$items += $vars['filter'];
 	}
