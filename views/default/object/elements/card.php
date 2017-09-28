@@ -52,7 +52,7 @@ if (empty($tags) && $tags !== false) {
 	]);
 }
 
-$vars['menu'] = $menu;
+$menu = elgg_extract('menu', $vars);
 unset($vars['metadata']);
 if (empty($menu) && $menu !== false && $entity instanceof ElggEntity && elgg_is_logged_in()) {
 	$vars['menu'] = elgg_view('object/elements/menu/placeholder', $vars);
