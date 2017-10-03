@@ -11,6 +11,9 @@ $success = $error = 0;
 $dir = elgg_get_config('dataroot');
 
 foreach ($assets as $name => $asset) {
+	if (!$asset) {
+		continue;
+	}
 	if (!$asset->isValid()) {
 		$error++;
 		continue;
