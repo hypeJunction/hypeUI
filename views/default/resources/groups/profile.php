@@ -24,8 +24,10 @@ $vars['entity'] = $entity;
 $subtype = $entity->getSubtype() ? : 'default';
 if (elgg_view_exists("profiles/group/$subtype")) {
 	$content = elgg_view("profiles/group/$subtype", $vars);
-} else {
+} elseif (elgg_view_exists("profiles/group/default")) {
 	$content = elgg_view('profiles/group/default', $vars);
+} else {
+	$content = elgg_view('groups/profile/layout', $vars);
 }
 
 $filter = elgg_view('filters/groups/profile', $vars);
