@@ -66,15 +66,23 @@ if (is_array($profile_fields) && sizeof($profile_fields) > 0) {
 	}
 }
 
-if (empty($fields_output)) {
-	return;
-}
-
 $result = '';
 if ($user->isBanned()) {
 	$title = elgg_echo('banned');
 	$reason = ($user->ban_reason === 'banned') ? '' : " $user->ban_reason";
 	$result .= "<div class='message is-danger'><h5 class='message-header'>$title</h5><div class='message-body'>$reason</div></div>";
+}
+
+if (empty($fields_output)) {
+	if (elgg_view_exists('profile/details/no-fields')) {
+		$fields_output = elgg_view('profile/details/no-fields', [
+			'entity' => $user,
+		]);
+	}
+}
+
+if (!$fields_output && !$result) {
+	return;
 }
 
 $result .= elgg_format_element('div', [
