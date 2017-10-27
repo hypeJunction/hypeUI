@@ -4,8 +4,9 @@
  * Page layout navigation
  */
 
-// Uncomment if you want breadcrumbs and extras
-return;
+if (!elgg_get_plugin_setting('show_breadcrumbs', 'hypeUI', false)) {
+	return;
+}
 
 $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 

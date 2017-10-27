@@ -12,6 +12,17 @@ echo elgg_view_field([
 ]);
 
 echo elgg_view_field([
+	'#type' => 'select',
+	'#label' => elgg_echo('admin:theme:layout:breadcrumbs'),
+	'value' => elgg_get_plugin_setting('breadcrumbs', 'hypeUI', false),
+	'name' => 'params[breadcrumbs]',
+	'options_values' => [
+		false => elgg_echo('option:no'),
+		true => elgg_echo('option:yes'),
+	],
+]);
+
+echo elgg_view_field([
 	'#type' => 'number',
 	'#label' => elgg_echo('admin:theme:layout:site_menu_count'),
 	'#help' => elgg_echo('admin:theme:layout:site_menu_count:help'),

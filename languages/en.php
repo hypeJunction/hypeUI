@@ -34,6 +34,8 @@ return [
 	'admin:theme:layout:site_menu_count' => 'Featured Items',
 	'admin:theme:layout:site_menu_count:help' => 'Maximum number of main menu items to show before adding a More menu item. Set to 0 to display all items without More',
 
+	'admin:theme:layout:breadcrumbs' => 'Show breadcrumbs',
+
 	'admin:theme:layout:sidebar_width' => 'Right Sidebar Width',
 	'admin:theme:layout:sidebar_alt_width' => 'Left Sidebar Width',
 
