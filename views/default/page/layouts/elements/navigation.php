@@ -4,16 +4,11 @@
  * Page layout navigation
  */
 
-if (!elgg_get_plugin_setting('show_breadcrumbs', 'hypeUI', false)) {
+if (!elgg_get_plugin_setting('breadcrumbs', 'hypeUI', false)) {
 	return;
 }
 
 $nav = elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
-
-$extras = elgg_view_menu('extras', [
-	'sort_by' => 'priority',
-	'class' => 'elgg-menu-hz',
-]);
 ?>
 <div class="elgg-layout-navigation">
     <div class="elgg-inner container">
