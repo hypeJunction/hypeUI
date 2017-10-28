@@ -20,3 +20,8 @@ The intention here is not to ensure broad compatibility, rather to demonstrate b
 ![Blog](https://raw.github.com/hypeJunction/hypeUI/master/screenshots/blog.png "Blog")
 ![Groups](https://raw.github.com/hypeJunction/hypeUI/master/screenshots/groups.png "Groups")
 ![Admin](https://raw.github.com/hypeJunction/hypeUI/master/screenshots/admin.png "Admin")
+
+
+## Contributing
+
+If you want to update the version of Bulma included, first update the npm package, then run `npm run bulma`. It will convert and copy updated library files to views.

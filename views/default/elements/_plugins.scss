@@ -1,0 +1,201 @@
+$input: $grey-darker !default;
+$input-background: $white !default;
+$input-border: $grey-lighter !default;
+$input-radius: $radius !default;
+
+.messages-buttonbank {
+  margin-top: 1em;
+}
+
+.thewire-form {
+  @extend .box;
+}
+
+.interactions-comments-list > li {
+  box-shadow: none !important;
+  border-bottom: 1px solid #dcdcdc !important;
+}
+
+.interactions-comments-list > li .elgg-listing-full {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.interactions-component .elgg-form {
+  padding: 1.5em 1em 1em 1em;
+}
+
+.elgg-listing-summary {
+  .scraper-card-video {
+    min-width: 200px;
+  }
+
+  .elgg-module-widget & .scraper-card-video {
+    width: 100%;
+  }
+}
+
+.elgg-module.elgg-module-scraper-card {
+  background: $white-ter;
+  border-radius: 3px;
+  box-shadow: none;
+}
+
+.scraper-card-block {
+  border: 0 !important;
+
+  .elgg-body {
+    @include tablet {
+      padding: 0 15px;
+    }
+  }
+}
+
+.scraper-card-block h3 {
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.elgg-menu-follow-tag .icon {
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  margin-left: 8px;
+  margin-right: -6px;
+  color: inherit;
+}
+
+.interactions-component .message {
+  margin: 1em auto;
+}
+
+.elgg-form {
+  ul.tagit {
+    border-color: $input-border;
+    border-radius: $input-radius;
+  }
+
+  ul.tagit li.tagit-choice {
+    border-color: $grey-dark;
+    background: $white-ter;
+    color: $black;
+
+    &:hover {
+      background: $grey;
+      background: $white-ter;
+    }
+  }
+
+  .elgg-input-dropzone {
+    border-color: $input-border;
+    border-radius: $input-radius;
+  }
+
+  .elgg-dropzone-instructions .icon .elgg-icon-cloud-upload {
+    font-size: 40px !important;
+    color: $grey-light;
+  }
+
+  .elgg-dropzone-instructions strong,
+  .elgg-dropzone-instructions span {
+    color: $grey-light;
+  }
+}
+
+.elgg-tokeninput-token {
+  display: flex;
+  align-items: center;
+}
+
+.elgg-tokeninput-token .elgg-image {
+  margin-right: 5px;
+}
+
+ul.token-input-list li.token-input-token {
+  display: flex;
+  align-items: center;
+}
+
+ul.token-input-list .elgg-image-block.elgg-tokeninput-token {
+  width: auto;
+  flex-grow: 1;
+}
+
+.elgg-tokeninput-token .elgg-avatar-small {
+  border: none;
+}
+
+.elgg-notifications-popup,
+.elgg-inbox-popup {
+  border-radius: 0 0 0.5em 0.5em;
+
+  .elgg-list > li {
+    margin: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid $white-ter;
+  }
+}
+
+$color-lightning: max(100% - lightness($primary) - 2%, 0%);
+$new-item-highlight-color: lighten($primary, $color-lightning);
+
+.notification-new,
+.inbox-message-unread {
+  background-color: $new-item-highlight-color !important;
+}
+
+.inbox-thread-participants {
+  padding: 2em !important;
+}
+
+.inbox-messages-thread-full > li {
+  box-shadow: none !important;
+  border-bottom: 1px solid $white-ter;
+}
+
+.elgg-list-inbox > li {
+  padding: 0 !important;
+
+  & > article {
+    border-radius: 0 !important;
+  }
+}
+
+.elgg-list-inbox > li h3 {
+  font-size: 1.5em !important;
+}
+
+.elgg-item-object-messages {
+  padding: 0 !important;
+}
+
+.elgg-item-object-messages > article {
+  padding: 1.5em !important;
+  border-radius: 6px !important;
+}
+
+.elgg-form-photos-batch-edit .elgg-image-block {
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid $white-ter;
+}
+
+.tidypics-album-nav {
+  justify-content: space-between;
+  margin-bottom: 2em;
+  font-size: 1.5em;
+}
+
+.tidypics-album-nav .elgg-icon {
+  font-size: 0.75em !important;
+}
+
+.tidypics-photo-wrapper {
+  text-align: center;
+}
+
+.tidypics-gallery {
+  @extend .elgg-cards;
+}
