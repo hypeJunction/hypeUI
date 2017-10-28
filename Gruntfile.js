@@ -47,20 +47,6 @@ module.exports = function (grunt) {
 				dest: 'build/',
 				expand: true
 			},
-			sass: {
-				expand: true,
-				cwd: 'node_modules/bulma/sass/',
-				src: [
-					'**',
-				],
-				dest: 'sass/bulma/'
-			},
-            scss: {
-                src: [
-                    'scss/**',
-                ],
-                dest: 'views/default/'
-            }
 		},
 		compress: {
 			release: {
@@ -134,18 +120,7 @@ module.exports = function (grunt) {
 			release: {
 				src: 'CHANGELOG.md'
 			}
-		},
-		'sass-convert' : {
-			options: {
-                from: 'sass',
-                to: 'scss',
-                indent: 4,
-			},
-			sass: {
-                files: {
-                    src: ['sass/**/*.sass'],
-                }
-            }
+
 		}
 	});
 	// Load all grunt plugins here
@@ -157,7 +132,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-conventional-changelog');
 	grunt.loadNpmTasks('grunt-git');
 	grunt.loadNpmTasks('grunt-gh-release');
-    grunt.loadNpmTasks('grunt-sass-convert');
 
 	grunt.registerTask('readpkg', 'Read in the package.json file', function () {
 		grunt.config.set('pkg', grunt.file.readJSON('package.json'));
@@ -180,14 +154,6 @@ module.exports = function (grunt) {
 			'copy:release',
 			'compress:release',
 			'gh_release',
-		]);
-	});
-
-	grunt.registerTask('scss', function() {
-        grunt.task.run([
-        	'copy:sass',
-        	'sass-convert:sass',
-			//'copy:scss',
 		]);
 	});
 };
