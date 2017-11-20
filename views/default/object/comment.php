@@ -24,13 +24,13 @@ if ($full_view) {
 
 	$vars['title'] = false;
 	$vars['icon'] = $commenter_icon;
-	$vars['content'] = $comment_text;
 
 	$comment_text = elgg_view('output/longtext', [
 		'value' => $comment->description,
 		'class' => 'elgg-inner',
 		'data-role' => $comment instanceof ElggDiscussionReply ? 'discussion-reply-text' : 'comment-text',
 	]);
+	$vars['content'] = $comment_text;
 
 	echo elgg_view('object/elements/summary', $vars + [
 			'icon' => $commenter_icon,
