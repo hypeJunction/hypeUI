@@ -21,11 +21,6 @@
 	</requires>
 
 	<suggests>
-		<type>plugin</type>
-		<name>elgg-scss</name>
-	</suggests>
-
-	<suggests>
 		<type>priority</type>
 		<plugin>hypeInteractions</plugin>
 		<priority>before</priority>

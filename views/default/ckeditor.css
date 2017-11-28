@@ -1,0 +1,42 @@
+.elgg-form .cke {
+  clear: right;
+}
+
+.elgg-form .cke_bottom .cke_wordcount {
+  float: left;
+}
+
+.elgg-form .cke_bottom .cke_path {
+  float: right;
+}
+
+.elgg-form .cke_top,
+.elgg-form .cke_bottom {
+  background: none !important;
+  border-color: rgba(33, 33, 33, 0.05) !important;
+}
+
+.elgg-form .cke_chrome {
+  border: 1px solid #dbdbdb !important;
+  box-shadow: none !important;
+  background: white !important;
+  border-radius: 3px !important;
+  overflow: hidden !important;
+  font-family: "Open Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+}
+
+.elgg-form .cke_toolgroup {
+  background: none !important;
+  border: none !important;
+}
+
+.elgg-form .cke_button {
+  box-shadow: none !important;
+  border: 1px solid transparent !important;
+}
+
+.elgg-form .cke_button_on,
+.elgg-form .cke_button:hover {
+  border: 1px solid #dbdbdb !important;
+  background: whitesmoke !important;
+}
