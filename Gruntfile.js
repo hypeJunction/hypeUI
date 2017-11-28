@@ -124,16 +124,16 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: 'sass',
+                    cwd: './sass',
                     src: ['*.scss'],
-                    dest: '../views/default',
+                    dest: './views/default',
                     ext: '.css'
                 }]
             }
         },
         watch: {
             css: {
-                files: 'sass/**/*.scss',
+                files: './sass/**/*.scss',
                 tasks: ['sass']
             }
         }
