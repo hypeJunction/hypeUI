@@ -12,6 +12,5 @@ sass-convert --from sass --to scss ./node_modules/bulma/bulma.sass ./sass/bulma/
 find ./sass/bulma/ -name "*.scss" | xargs sed -i "s/\.sass//g"
 find ./sass/bulma/ -name "*.scss" | xargs sed -i "s/sass\///g"
 
-
 #ensure that we got them all
 grep -R "@import" ./sass/bulma/

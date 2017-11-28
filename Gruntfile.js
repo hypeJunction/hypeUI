@@ -125,9 +125,9 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: './sass',
-                    src: ['*.scss'],
+                    src: ['**/*.scss', '!bulma/**/*.scss'],
                     dest: './views/default',
-                    ext: '.css'
+                    ext: '.css',
                 }]
             }
         },
