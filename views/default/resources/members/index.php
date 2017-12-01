@@ -11,6 +11,7 @@ $tabs = elgg_trigger_plugin_hook('members:config', 'tabs', null, array());
 foreach ($tabs as $type => $values) {
 	$tabs[$type]['name'] = $type;
 	$tabs[$type]['text'] = $tabs[$type]['title'];
+	$tabs[$type]['href'] = $tabs[$type]['url'];
 	$tabs[$type]['selected'] = ($page == $type);
 }
 
