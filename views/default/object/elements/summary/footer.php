@@ -4,7 +4,7 @@ $metadata = elgg_view('object/elements/summary/metadata', $vars);
 $responses = elgg_view('object/elements/summary/responses', $vars);
 
 $footer = $metadata . $responses;
-if (empt($footer)) {
+if (empty($footer)) {
 	return;
 }
 
