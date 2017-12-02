@@ -49,6 +49,7 @@ $params = [
 	'entity' => $entity,
 	'handler' => hypeapps_ui_get_entity_handler($entity),
 	'sort_by' => 'priority',
+	'inline' => false,
 ];
 
 $menus = elgg_view_menu('entity', $params);
