@@ -1,7 +1,5 @@
 <?php
 
-use ElggRiverItem;
-
 $responses = elgg_extract('responses', $vars);
 
 // allow river views to override the response content
