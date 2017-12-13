@@ -21,22 +21,43 @@ if (!$entity || !$commenter) {
 $commenter_icon = elgg_view_entity_icon($commenter, 'small');
 
 if ($full_view) {
-
 	$vars['title'] = false;
-	$vars['icon'] = $commenter_icon;
 
 	$comment_text = elgg_view('output/longtext', [
 		'value' => $comment->description,
 		'class' => 'elgg-inner',
 		'data-role' => $comment instanceof ElggDiscussionReply ? 'discussion-reply-text' : 'comment-text',
 	]);
-	$vars['content'] = $comment_text;
 
-	echo elgg_view('object/elements/summary', $vars + [
-			'icon' => $commenter_icon,
-			'content' => $comment_text,
-			'access' => false,
-		]);
+	if (elgg_extract('show_attachments', $vars, true)) {
+		if (elgg_is_active_plugin('hypeScraper')) {
+			$tokens = hypeapps_extract_tokens($comment->description);
+			$urls = elgg_extract('urls', $tokens, []);
+			if (!empty($urls)) {
+				$urls = array_values($urls);
+				$comment_text .= elgg_view('output/player', [
+					'href' => $urls[0],
+					'fallback' => true,
+				]);
+			}
+		}
+	}
+
+	$comment_text .= elgg_view_menu('entity_social', [
+		'entity' => $comment,
+		'sort_by' => 'priority',
+		'class' => 'elgg-menu-hz',
+	]);
+
+	echo elgg_view('object/elements/summary', array_merge($vars, [
+		'entity' => $comment,
+		'icon' => $commenter_icon,
+		'access' => false,
+		'content' => false,
+		'inline_content' => $comment_text,
+		'social' => false,
+		'class' => 'elgg-comment',
+	]));
 } else {
 
 	$friendlytime = elgg_view_friendly_time($comment->time_created);
@@ -44,7 +65,7 @@ if ($full_view) {
 	$entity_title = $entity->title ? $entity->title : elgg_echo('untitled');
 	$entity_link = elgg_view('output/url', [
 		'href' => $entity->getURL(),
-		'text' => $entity->getDisplayName() ?: elgg_echo('untitled'),
+		'text' => $entity->getDisplayName() ? : elgg_echo('untitled'),
 	]);
 
 	$commenter_link = elgg_view('output/url', [
