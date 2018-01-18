@@ -66,7 +66,7 @@ if ($full) {
 			'id' => 'messages-reply-form',
 			'action' => 'action/messages/send',
 		];
-		$body_params = ['message' => $message];
+		$body_params = ['message' => $entity];
 		$form = elgg_view_form('messages/reply', $form_params, $body_params);
 		$vars['responses'] = elgg_view_module('info', elgg_echo('reply'), $form);
 	}
