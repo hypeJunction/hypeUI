@@ -11,8 +11,6 @@ if (!$entity instanceof ElggEntity) {
 
 $class = [];
 
-$entity->readYet = false;
-
 if ($entity->toId == elgg_get_page_owner_guid()) {
 	// received
 	$user = get_user($entity->fromId);
