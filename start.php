@@ -99,6 +99,11 @@ function hypeapps_ui_get_entity_handler(ElggEntity $entity) {
 		],
 	];
 
+        if (elgg_is_active_plugin('event_calendar')) {
+                $map['object']['event_calendar'] = 'event_calendar';
+                elgg_load_library('elgg:event_calendar');
+        }
+
 	$handler = elgg_extract($entity->getSubtype() ?: 'default', $map[$entity->type]);
 
 	$params = ['entity' => $entity];
