@@ -65,7 +65,7 @@ module.exports = function (grunt) {
 					message: 'chore(build): release <%= pkg.version %>',
 				},
 				files: {
-					src: ["composer.json", "manifest.xml", "package.json", "CHANGELOG.md"],
+					src: [ "manifest.xml", "package.json", "CHANGELOG.md"],
 				}
 			},
 		},
@@ -121,6 +121,18 @@ module.exports = function (grunt) {
 				src: 'CHANGELOG.md'
 			}
 
+		},
+		sass: {
+			options: {
+				outputStyle: 'expanded'
+			},
+			default: {
+				files: {
+					'views/default/bulma.css': 'sass/bulma.sass',
+					'views/default/ckeditor.css': 'sass/ckeditor.sass',
+					'views/default/theme_sandbox.css': 'sass/theme_sandbox.sass'
+				}
+			}
 		}
 	});
 	// Load all grunt plugins here
@@ -128,19 +140,27 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-compress');
-	grunt.loadNpmTasks('grunt-composer');
 	grunt.loadNpmTasks('grunt-conventional-changelog');
 	grunt.loadNpmTasks('grunt-git');
 	grunt.loadNpmTasks('grunt-gh-release');
+	grunt.loadNpmTasks('grunt-sass');
 
 	grunt.registerTask('readpkg', 'Read in the package.json file', function () {
 		grunt.config.set('pkg', grunt.file.readJSON('package.json'));
 	});
 
+	grunt.registerTask('build', [
+		'sass',
+		'clean:release',
+		'copy:release',
+		'compress:release'
+	]);
+
 	// Release task
 	grunt.registerTask('release', function (n) {
 		var n = n || 'patch';
 		grunt.task.run([
+			'build',
 			'version::' + n,
 			'readpkg',
 			'conventionalChangelog:release',
@@ -150,7 +170,6 @@ module.exports = function (grunt) {
 			'gitpush:release',
 			'gitpush:release_tags',
 			'clean:release',
-			'composer:install:no-dev:prefer-dist',
 			'copy:release',
 			'compress:release',
 			'gh_release',
