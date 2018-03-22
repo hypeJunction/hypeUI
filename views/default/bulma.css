@@ -10498,10 +10498,10 @@ ul.token-input-list .elgg-image-block.elgg-tokeninput-token {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .hidden body *.hidden,
 .hidden body * > .hidden {
-  display: none;
+  display: none !important;
 }
