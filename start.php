@@ -90,7 +90,7 @@ function hypeapps_ui_get_entity_handler(ElggEntity $entity) {
 			'videolist_item' => 'videolist',
 			'album' => 'photos',
 			'image' => 'photos',
-            'poll' => 'poll',
+			'poll' => 'poll',
 		],
 		'user' => [
 			'default' => 'profile',
