@@ -10497,6 +10497,10 @@ ul.token-input-list .elgg-image-block.elgg-tokeninput-token {
   text-align: center;
 }
 
+.elgg-object-menu-popup .elgg-menu-hz li {
+  width: 100%;
+}
+
 .hidden {
   display: none;
 }
