@@ -1,0 +1,26 @@
+/* CSS for CKEditor content iframe */
+
+@import "../elements/theme_variables";
+@import "../bulma/utilities/_all";
+@import "../bulma/base/generic";
+@import "../bulma/base/minireset";
+
+html, body {
+  height: auto;
+  margin: 0;
+  overflow: auto;
+  font-size: 90%;
+}
+
+body {
+  padding: 0.5em;
+}
+
+ul {
+  list-style: disc;
+}
+
+ul, ol {
+  margin-left: 2em;
+  padding-left: 0;
+}

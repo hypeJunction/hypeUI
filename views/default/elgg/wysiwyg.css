@@ -1,12 +1,14 @@
 /* CSS for CKEditor content iframe */
 @keyframes spinAround {
   from {
-    transform: rotate(0deg);
-  }
+    transform: rotate(0deg); }
   to {
-    transform: rotate(359deg);
-  }
-}
+    transform: rotate(359deg); } }
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
 html {
   background-color: #fff;
   font-size: 16px;
@@ -15,8 +17,7 @@ html {
   min-width: 300px;
   overflow-x: hidden;
   overflow-y: scroll;
-  text-rendering: optimizeLegibility;
-}
+  text-rendering: optimizeLegibility; }
 
 article,
 aside,
@@ -25,109 +26,91 @@ footer,
 header,
 hgroup,
 section {
-  display: block;
-}
+  display: block; }
 
 body,
 button,
 input,
 select,
 textarea {
-  font-family: "Open Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
+  font-family: "Open Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
 code,
 pre {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
-  font-family: monospace;
-}
+  font-family: monospace; }
 
 body {
   color: #4a4a4a;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
-}
+  line-height: 1.5; }
 
 a {
   color: #0398e2;
   cursor: pointer;
   text-decoration: none;
-  transition: none 86ms ease-out;
-}
-a:hover {
-  color: #363636;
-}
+  transition: none 86ms ease-out; }
+  a:hover {
+    color: #363636; }
 
 code {
   background-color: whitesmoke;
   color: #f44034;
   font-size: 0.8em;
   font-weight: normal;
-  padding: 0.25em 0.5em 0.25em;
-}
+  padding: 0.25em 0.5em 0.25em; }
 
 hr {
   background-color: #dbdbdb;
   border: none;
   display: block;
   height: 1px;
-  margin: 1.5rem 0;
-}
+  margin: 1.5rem 0; }
 
 img {
   height: auto;
-  max-width: 100%;
-}
+  max-width: 100%; }
 
 input[type="checkbox"],
 input[type="radio"] {
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 small {
-  font-size: 0.875em;
-}
+  font-size: 0.875em; }
 
 span {
   font-style: inherit;
-  font-weight: inherit;
-}
+  font-weight: inherit; }
 
 strong {
   color: #363636;
-  font-weight: 700;
-}
+  font-weight: 700; }
 
 pre {
   background-color: whitesmoke;
   color: #4a4a4a;
   font-size: 0.8em;
   white-space: pre;
-  word-wrap: normal;
-}
-pre code {
-  -webkit-overflow-scrolling: touch;
-  background: none;
-  color: inherit;
-  display: block;
-  font-size: 1em;
-  overflow-x: auto;
-  padding: 1.25rem 1.5rem;
-}
+  word-wrap: normal; }
+  pre code {
+    -webkit-overflow-scrolling: touch;
+    background: none;
+    color: inherit;
+    display: block;
+    font-size: 1em;
+    overflow-x: auto;
+    padding: 1.25rem 1.5rem; }
 
 table {
-  width: 100%;
-}
-table td,
-table th {
-  text-align: left;
-  vertical-align: top;
-}
-table th {
-  color: #363636;
-}
+  width: 100%; }
+  table td,
+  table th {
+    text-align: left;
+    vertical-align: top; }
+  table th {
+    color: #363636; }
 
 /*! minireset.css v0.0.2 | MIT License | github.com/jgthms/minireset.css */
 html,
@@ -154,8 +137,7 @@ h4,
 h5,
 h6 {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 h1,
 h2,
@@ -164,75 +146,58 @@ h4,
 h5,
 h6 {
   font-size: 100%;
-  font-weight: normal;
-}
+  font-weight: normal; }
 
 ul {
-  list-style: none;
-}
+  list-style: none; }
 
 button,
 input,
 select,
 textarea {
-  margin: 0;
-}
+  margin: 0; }
 
 html {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 * {
-  box-sizing: inherit;
-}
-*:before, *:after {
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
+  *:before, *:after {
+    box-sizing: inherit; }
 
 img,
 embed,
 object,
 audio,
 video {
-  max-width: 100%;
-}
+  max-width: 100%; }
 
 iframe {
-  border: 0;
-}
+  border: 0; }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 td,
 th {
   padding: 0;
-  text-align: left;
-}
+  text-align: left; }
 
 html, body {
   height: auto;
   margin: 0;
   overflow: auto;
-  font-size: 90%;
-}
+  font-size: 90%; }
 
 body {
-  padding: 0.5em;
-}
+  padding: 0.5em; }
 
 ul {
-  list-style: disc;
-}
+  list-style: disc; }
 
 ul, ol {
   margin-left: 2em;
-  padding-left: 0;
-}
+  padding-left: 0; }
 
-p {
-  margin-bottom: 1em;
-}
-
+/*# sourceMappingURL=wysiwyg.css.map */

@@ -1,0 +1,230 @@
+// Display
+
+$displays: "block" "flex" "inline" "inline-block" "inline-flex";
+
+@each $display in $displays {
+  .is-#{$display} {
+    display: #{$display};
+  }
+
+  @include mobile {
+    .is-#{$display}-mobile {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include tablet {
+    .is-#{$display}-tablet {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include tablet-only {
+    .is-#{$display}-tablet-only {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include touch {
+    .is-#{$display}-touch {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include desktop {
+    .is-#{$display}-desktop {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include desktop-only {
+    .is-#{$display}-desktop-only {
+      display: #{$display} !important;
+    }
+  }
+
+
+  @include widescreen {
+    .is-#{$display}-widescreen {
+      display: #{$display} !important;
+    }
+  }
+}
+
+// Float
+
+.is-clearfix {
+  @include clearfix;
+}
+
+.is-pulled-left {
+  float: left !important;
+}
+
+.is-pulled-right {
+  float: right !important;
+}
+
+// Overflow
+
+.is-clipped {
+  overflow: hidden !important;
+}
+
+// Overlay
+
+.is-overlay {
+  @include overlay;
+}
+
+// Text
+
+@each $size in $sizes {
+  $i: index($sizes, $size);
+
+  .is-size-#{$i} {
+    font-size: $size;
+  }
+
+  @include mobile {
+    .is-size-#{$i}-mobile {
+      font-size: $size;
+    }
+  }
+
+
+  @include tablet {
+    .is-size-#{$i}-tablet {
+      font-size: $size;
+    }
+  }
+
+
+  @include touch {
+    .is-size-#{$i}-touch {
+      font-size: $size;
+    }
+  }
+
+
+  @include desktop {
+    .is-size-#{$i}-desktop {
+      font-size: $size;
+    }
+  }
+
+
+  @include widescreen {
+    .is-size-#{$i}-widescreen {
+      font-size: $size;
+    }
+  }
+
+
+  @include fullhd {
+    .is-size-#{$i}-fullhd {
+      font-size: $size;
+    }
+  }
+}
+
+.has-text-centered {
+  text-align: center !important;
+}
+
+.has-text-left {
+  text-align: left !important;
+}
+
+.has-text-right {
+  text-align: right !important;
+}
+
+@each $name, $pair in $colors {
+  $color: nth($pair, 1);
+
+  .has-text-#{$name} {
+    color: $color;
+  }
+
+  a.has-text-#{$name} {
+    &:hover,
+    &:focus {
+      color: darken($color, 10%);
+    }
+  }
+}
+
+// Visibility
+
+.is-hidden {
+  display: none !important;
+}
+
+@include mobile {
+  .is-hidden-mobile {
+    display: none !important;
+  }
+}
+
+
+@include tablet {
+  .is-hidden-tablet {
+    display: none !important;
+  }
+}
+
+
+@include tablet-only {
+  .is-hidden-tablet-only {
+    display: none !important;
+  }
+}
+
+
+@include touch {
+  .is-hidden-touch {
+    display: none !important;
+  }
+}
+
+
+@include desktop {
+  .is-hidden-desktop {
+    display: none !important;
+  }
+}
+
+
+@include desktop-only {
+  .is-hidden-desktop-only {
+    display: none !important;
+  }
+}
+
+
+@include widescreen {
+  .is-hidden-widescreen {
+    display: none !important;
+  }
+}
+
+
+// Other
+
+.is-marginless {
+  margin: 0 !important;
+}
+
+.is-paddingless {
+  padding: 0 !important;
+}
+
+.is-unselectable {
+  @include unselectable;
+}

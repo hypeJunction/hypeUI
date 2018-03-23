@@ -1,0 +1,20 @@
+$black: hsl(0, 0%, 13%);
+$black-bis: hsl(0, 0%, 18%);
+$black-ter: hsl(0, 0%, 26%);
+
+$orange: hsl(36, 100%, 50%);
+$yellow: hsl(54, 100%, 62%);
+$green: hsl(122, 39%, 49%);
+$turquoise: hsl(187, 100%, 42%);
+$blue: hsl(199, 98%, 48%);
+$purple: hsl(291, 64%, 42%);
+$red: hsl(4, 90%, 58%);
+
+$primary: hsl(200, 97%, 45%);
+
+$family-sans-serif: "Open Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+$nav-height: 3.25rem;
+
+@import "../bulma/utilities/all";
+@import "../elements/mixins";

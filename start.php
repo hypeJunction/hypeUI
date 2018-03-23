@@ -1,8 +1,6 @@
 <?php
 
 /**
- *
- *
  * Replaces some of the most corky elements of Elgg UI
  *
  * @author    Ismayil Khayredinov <info@hypejunction.com>

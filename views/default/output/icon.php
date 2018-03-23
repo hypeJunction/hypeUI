@@ -55,7 +55,7 @@ $translated_icons = [
 	"video" => "film"
 ];
 
-$convert = (bool)elgg_extract('convert', $vars, true);
+$convert = (bool) elgg_extract('convert', $vars, true);
 unset($vars['convert']);
 
 $class = elgg_extract_class($vars, ["elgg-icon", "fa"]);
@@ -82,10 +82,13 @@ $vars["class"] = array_unique($class);
 $icon = elgg_format_element('i', $vars, '');
 $position = elgg_extract('position', $vars);
 $size = elgg_extract('size', $vars, 'small');
+$color = elgg_extract('color', $vars, 'success');
 
 echo elgg_format_element('span', [
 	'class' => [
 		"icon",
 		"is-$size",
 		$position ? "is-$position" : '',
-	]], $icon);
+		$color ? "is-$color" : '',
+	]
+], $icon);
