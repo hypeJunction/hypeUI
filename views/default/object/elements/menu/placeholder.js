@@ -53,7 +53,9 @@ define(function (require) {
             if ($hovermenu.is(':visible')) {
                 // close hovermenu if arrow is clicked & menu already open
                 popup.close($hovermenu);
+                $hovermenu.addClass('hidden');
             } else {
+                $hovermenu.removeClass('hidden');
                 popup.open($icon, $hovermenu, {
                     'my': 'right top',
                     'at': 'right bottom',
