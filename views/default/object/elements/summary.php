@@ -26,7 +26,7 @@ if (!$entity instanceof ElggEntity) {
 }
 
 foreach ($vars as $key => $value) {
-	if (is_callable($value)) {
+	if ($value instanceof Closure) {
 		$vars[$key] = call_user_func($value, $entity, $full_view);
 	}
 }
