@@ -1,3 +1,13 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/hypeJunction/hypeUI/compare/1.4.1...v2.0.0) (2018-10-29)
+
+
+### Bug Fixes
+
+* **npm:** update node dependencies ([998e11e](https://github.com/hypeJunction/hypeUI/commit/998e11e))
+
+
+
 <a name="1.4.1"></a>
 ## [1.4.1](https://github.com/hypeJunction/hypeUI/compare/1.5.0...v1.4.1) (2018-10-29)
 
