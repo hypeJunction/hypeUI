@@ -1,3 +1,13 @@
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/hypeJunction/hypeUI/compare/1.5.0...v1.4.1) (2018-10-29)
+
+
+### Bug Fixes
+
+* **views:** prevent warnings in summary view ([28a75be](https://github.com/hypeJunction/hypeUI/commit/28a75be))
+
+
+
 <a name="1.4.0"></a>
 # 1.4.0 (2018-03-27)
 
