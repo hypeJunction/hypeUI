@@ -1,3 +1,13 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/hypeJunction/hypeUI/compare/2.0.0...v2.1.0) (2018-10-29)
+
+
+### Bug Fixes
+
+* **composer:** bring back composer.json ([ea8e170](https://github.com/hypeJunction/hypeUI/commit/ea8e170))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/hypeJunction/hypeUI/compare/1.4.1...v2.0.0) (2018-10-29)
 
