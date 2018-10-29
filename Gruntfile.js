@@ -65,7 +65,7 @@ module.exports = function (grunt) {
 					message: 'chore(build): release <%= pkg.version %>',
 				},
 				files: {
-					src: [ "manifest.xml", "package.json", "CHANGELOG.md"],
+					src: ["composer.json", "manifest.xml", "package.json", "CHANGELOG.md"],
 				}
 			},
 		},
@@ -83,8 +83,7 @@ module.exports = function (grunt) {
 			}
 		},
 		gitpush: {
-			release: {
-			},
+			release: {},
 			release_tags: {
 				options: {
 					tags: true
@@ -170,6 +169,7 @@ module.exports = function (grunt) {
 			'gitpush:release',
 			'gitpush:release_tags',
 			'clean:release',
+			'composer:install:no-dev:prefer-dist',
 			'copy:release',
 			'compress:release',
 			'gh_release',
