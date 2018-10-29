@@ -9,6 +9,7 @@
 		"repo": "hypeUI"
 	},
 	"devDependencies": {
+		"bulma": "^0.4.2",
 		"curlrequest": "^0.3.10",
 		"grunt": "^0.4.5",
 		"grunt-composer": "^0.4.4",
@@ -18,9 +19,8 @@
 		"grunt-conventional-changelog": "^5.0.0",
 		"grunt-gh-release": "0.0.2",
 		"grunt-git": "^0.3.5",
-		"grunt-version": "^1.0.0",
 		"grunt-sass": "^2.1.0",
-		"underscore": "^1.8.3",
-		"bulma": "^0.4.2"
+		"grunt-version": "^1.0.0",
+		"underscore": "^1.8.3"
 	}
 }
