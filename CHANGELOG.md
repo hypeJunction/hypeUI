@@ -1,3 +1,9 @@
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/hypeJunction/hypeUI/compare/2.1.0...v1.6.0) (2018-10-29)
+
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/hypeJunction/hypeUI/compare/2.0.0...v2.1.0) (2018-10-29)
 
