@@ -1,3 +1,13 @@
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/hypeJunction/hypeUI/compare/1.6.0...v1.7.0) (2018-10-29)
+
+
+### Bug Fixes
+
+* **security:** update vulnerable packages ([0516d4f](https://github.com/hypeJunction/hypeUI/commit/0516d4f))
+
+
+
 <a name="1.6.0"></a>
 # [1.6.0](https://github.com/hypeJunction/hypeUI/compare/2.1.0...v1.6.0) (2018-10-29)
 
